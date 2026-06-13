@@ -1,0 +1,1177 @@
+/* Client Book Ride Mobile Styles */
+/* ALL SELECTORS HAVE "mobile-" PREFIX TO AVOID CONFLICTS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root container - full width, no overflow issues */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* FORCE FULL WIDTH - NO WHITE SPACE */
+.mobile-book-ride-container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    min-height: 100vh;
+    background-color: #fff;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+.mobile-book-ride-view {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    min-height: 100vh;
+    padding-bottom: 70px;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Header - full width */
+.mobile-book-ride-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: white;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    margin: 0;
+}
+
+.mobile-book-ride-user-info h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.mobile-wallet-balance {
+    font-size: 12px;
+    color: #28a745;
+    font-weight: 600;
+}
+
+.mobile-book-ride-notification-btn {
+    width: 40px;
+    height: 40px;
+    background: #ff5e00;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.mobile-notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Steps - full width responsive */
+.mobile-booking-steps {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    margin: 0;
+}
+
+.mobile-step {
+    text-align: center;
+    flex: 1;
+}
+
+.mobile-step.active .mobile-step-number {
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    color: white;
+}
+
+.mobile-step-number {
+    width: 30px;
+    height: 30px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    font-weight: 600;
+    color: #666;
+    font-size: 14px;
+}
+
+.mobile-step h3 {
+    font-size: 12px;
+    color: #666;
+}
+
+.mobile-step.active h3 {
+    color: #ff5e00;
+    font-weight: 600;
+}
+
+/* Step Content - full width with responsive padding */
+.mobile-booking-step-content {
+    padding: 20px;
+    padding-bottom: 100px;
+    animation: fadeIn 0.3s ease;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    width: 100%;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-section-title i {
+    color: #ff5e00;
+}
+
+.mobile-section-subtitle {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.pickup-mode-text {
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+.dest-mode-text {
+    color: #F44336;
+    font-weight: 500;
+}
+
+/* Map Container - responsive */
+.mobile-map-picker-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 2px solid #ff5e00;
+    background: #f0f0f0;
+    border-radius: 0;
+}
+
+/* Responsive map height */
+@media (max-width: 768px) {
+    .mobile-map-picker-container {
+        height: 380px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-map-picker-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 380px) {
+    .mobile-map-picker-container {
+        height: 320px;
+    }
+}
+
+.mobile-map {
+    width: 100%;
+    height: 100%;
+}
+
+/* Map Overlay */
+.mobile-map-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+.mobile-mode-selector {
+    display: flex;
+    background: white;
+    border-radius: 50px;
+    padding: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-mode-btn {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 45px;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    color: #666;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.mobile-mode-btn.pickup.active {
+    background: #4CAF50;
+    color: white;
+}
+
+.mobile-mode-btn.destination.active {
+    background: #F44336;
+    color: white;
+}
+
+.mobile-search-box {
+    background: white;
+    border-radius: 50px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-search-box i {
+    color: #ff5e00;
+    margin-right: 8px;
+}
+
+.mobile-search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 10px 0;
+    background: transparent;
+}
+
+/* Center Location Button */
+.mobile-center-location-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    background: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #ff5e00;
+    font-size: 18px;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.mobile-center-location-btn:active {
+    background: #ff5e00;
+    color: white;
+    transform: scale(0.95);
+}
+
+/* Location Cards */
+.mobile-location-card {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    border-left: 4px solid #4CAF50;
+}
+
+.mobile-location-card.dest-card {
+    border-left-color: #F44336;
+}
+
+.mobile-location-card-label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mobile-location-card-label i {
+    font-size: 10px;
+}
+
+.mobile-location-card-address {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.mobile-location-card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.mobile-location-card-actions button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mobile-location-card-actions .clear-btn {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.mobile-location-card-actions .clear-btn:active {
+    background: #eee;
+}
+
+.mobile-location-card-actions .confirm-btn {
+    background: #ff5e00;
+    color: white;
+}
+
+.mobile-location-card-actions .confirm-btn:active {
+    background: #e65500;
+    transform: scale(0.98);
+}
+
+/* Saved Locations - responsive grid */
+.mobile-saved-locations,
+.mobile-popular-locations {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.mobile-saved-locations h3,
+.mobile-popular-locations h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.mobile-saved-locations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.mobile-saved-location-chip,
+.mobile-popular-location-chip {
+    background: #f8f8f8;
+    padding: 12px 8px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mobile-saved-location-chip:active,
+.mobile-popular-location-chip:active {
+    background: #fff5f0;
+    transform: scale(0.97);
+}
+
+.mobile-saved-location-chip i,
+.mobile-popular-location-chip i {
+    color: #ff5e00;
+    font-size: 20px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.mobile-saved-location-chip .name,
+.mobile-popular-location-chip .name {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.mobile-saved-location-chip .address {
+    font-size: 9px;
+    color: #666;
+    margin-top: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mobile-popular-locations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+/* Ride Plans */
+.mobile-ride-plans {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.mobile-plan-card {
+    padding: 16px;
+    border: 2px solid #f0f0f0;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #fafafa;
+    width: 100%;
+}
+
+.mobile-plan-card:active {
+    transform: scale(0.98);
+}
+
+.mobile-plan-card.selected {
+    border-color: #ff5e00;
+    background: #fff5f0;
+}
+
+.mobile-plan-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.mobile-plan-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(255, 94, 0, 0.1) 0%, rgba(255, 94, 0, 0.05) 100%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff5e00;
+    font-size: 20px;
+}
+
+.mobile-plan-card.selected .mobile-plan-icon {
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    color: white;
+}
+
+.mobile-plan-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.mobile-plan-price {
+    font-size: 14px;
+    color: #666;
+}
+
+.mobile-plan-features {
+    list-style: none;
+    margin: 12px 0 0;
+}
+
+.mobile-plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+.mobile-plan-features li i {
+    color: #4CAF50;
+    font-size: 11px;
+}
+
+/* Drivers */
+.mobile-driver-selection-info {
+    background: #e3f2fd;
+    border-left: 4px solid #2196F3;
+    padding: 12px;
+    border-radius: 12px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.mobile-driver-selection-info i {
+    color: #2196F3;
+    font-size: 20px;
+}
+
+.mobile-driver-selection-info .info-text {
+    flex: 1;
+}
+
+.mobile-driver-selection-info .info-text strong {
+    color: #1976D2;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.mobile-driver-selection-info .info-text p {
+    color: #555;
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.mobile-drivers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.mobile-driver-card {
+    padding: 15px;
+    border: 2px solid #f0f0f0;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    background: #fafafa;
+    width: 100%;
+}
+
+.mobile-driver-card:active {
+    transform: scale(0.98);
+}
+
+.mobile-driver-card.selected {
+    border-color: #ff5e00;
+    background: #fff5f0;
+}
+
+.mobile-driver-card.selected::after {
+    content: 'SELECTED';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff5e00;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.mobile-driver-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.mobile-driver-avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.mobile-driver-details h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.mobile-driver-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #FFC107;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.mobile-driver-rating span {
+    color: #666;
+    margin-left: 4px;
+}
+
+.mobile-driver-vehicle {
+    font-size: 11px;
+    color: #666;
+}
+
+.mobile-driver-vehicle i {
+    margin-right: 4px;
+}
+
+.mobile-driver-stats {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+}
+
+.mobile-driver-stats div {
+    text-align: center;
+}
+
+.mobile-driver-stats .stat-value {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    display: block;
+}
+
+.mobile-driver-stats .stat-label {
+    font-size: 10px;
+    color: #666;
+}
+
+.mobile-no-drivers {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+}
+
+.mobile-no-drivers i {
+    font-size: 48px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+
+.mobile-no-drivers .subtext {
+    font-size: 12px;
+    margin-top: 8px;
+    color: #999;
+}
+
+.mobile-skip-driver-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px dashed #ff5e00;
+    color: #ff5e00;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    transition: all 0.3s;
+}
+
+.mobile-skip-driver-btn:active {
+    background: #fff5f0;
+    transform: scale(0.98);
+}
+
+/* Payment */
+.mobile-payment-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.mobile-payment-option {
+    padding: 16px 12px;
+    border: 2px solid #f0f0f0;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #fafafa;
+}
+
+.mobile-payment-option:active {
+    transform: scale(0.97);
+}
+
+.mobile-payment-option.selected {
+    border-color: #ff5e00;
+    background: #fff5f0;
+}
+
+.mobile-payment-option i {
+    font-size: 28px;
+    color: #ff5e00;
+    margin-bottom: 10px;
+}
+
+.mobile-payment-option h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.mobile-payment-option p {
+    font-size: 11px;
+    color: #666;
+}
+
+.mobile-fare-summary {
+    background: #fafafa;
+    padding: 16px;
+    border-radius: 16px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.mobile-fare-summary h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.mobile-fare-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.mobile-fare-item.total {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff5e00;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.mobile-insufficient-warning {
+    color: #dc3545;
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* Action Buttons - Fixed at bottom */
+.mobile-action-buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 12px;
+    padding: 16px 20px;
+    background: white;
+    border-top: 1px solid #f0f0f0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    z-index: 90;
+    width: 100%;
+    margin: 0;
+}
+
+.mobile-back-btn {
+    flex: 1;
+    background: #f5f5f5;
+    color: #666;
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.mobile-back-btn:active {
+    background: #eee;
+    transform: scale(0.98);
+}
+
+.mobile-next-btn {
+    flex: 2;
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(255, 94, 0, 0.3);
+}
+
+.mobile-next-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.mobile-next-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Utility Classes */
+.mobile-flex { display: flex; }
+.mobile-items-center { align-items: center; }
+.mobile-gap-2 { gap: 8px; }
+.mobile-mt-1 { margin-top: 4px; }
+
+.mobile-tier-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+    display: inline-block;
+}
+
+/* Scrollbar styling */
+.mobile-book-ride-view::-webkit-scrollbar {
+    width: 4px;
+}
+
+.mobile-book-ride-view::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.mobile-book-ride-view::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 10px;
+}
+
+/* Map loading state */
+.mobile-map-picker-container:empty {
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-map-picker-container:empty::after {
+    content: "Loading map...";
+    color: #666;
+    font-size: 14px;
+}
+
+/* Google Maps controls fix */
+.gm-style .gm-style-cc,
+.gm-style .gm-style-cc + div {
+    display: block !important;
+}
+
+.gm-control-active {
+    background-color: white !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3) !important;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS - FULL WIDTH
+   ============================================ */
+
+/* Tablet and smaller devices */
+@media (max-width: 768px) {
+    .mobile-book-ride-container {
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
+    
+    .mobile-book-ride-view {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .mobile-booking-step-content {
+        padding: 16px;
+        padding-bottom: 100px;
+    }
+    
+    .mobile-action-buttons {
+        padding: 12px 16px;
+    }
+    
+    .mobile-back-btn,
+    .mobile-next-btn {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+/* Large phones */
+@media (max-width: 480px) {
+    .mobile-book-ride-container {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        min-width: 100vw !important;
+    }
+    
+    .mobile-book-ride-header {
+        padding: 12px 16px;
+    }
+    
+    .mobile-book-ride-user-info h1 {
+        font-size: 18px;
+    }
+    
+    .mobile-booking-steps {
+        padding: 12px 16px;
+    }
+    
+    .mobile-step-number {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    
+    .mobile-step h3 {
+        font-size: 10px;
+    }
+    
+    .mobile-section-title {
+        font-size: 16px;
+    }
+    
+    .mobile-section-subtitle {
+        font-size: 12px;
+    }
+    
+    .mobile-mode-btn {
+        font-size: 11px;
+        padding: 8px 12px;
+    }
+    
+    .mobile-search-box input {
+        font-size: 13px;
+    }
+    
+    .mobile-plan-title {
+        font-size: 15px;
+    }
+    
+    .mobile-plan-price {
+        font-size: 13px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .mobile-book-ride-container {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        min-width: 100vw !important;
+    }
+    
+    .mobile-saved-locations-grid,
+    .mobile-popular-locations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .mobile-payment-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .mobile-step h3 {
+        font-size: 9px;
+    }
+    
+    .mobile-mode-selector {
+        flex-direction: column;
+        border-radius: 16px;
+        gap: 4px;
+    }
+    
+    .mobile-mode-btn {
+        border-radius: 12px;
+    }
+    
+    .mobile-driver-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .mobile-driver-stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .mobile-action-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .mobile-back-btn,
+    .mobile-next-btn {
+        width: 100%;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 320px) {
+    .mobile-book-ride-container {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        min-width: 100vw !important;
+    }
+    
+    .mobile-section-title {
+        font-size: 15px;
+    }
+    
+    .mobile-plan-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .mobile-plan-icon {
+        margin: 0 auto;
+    }
+    
+    .mobile-driver-card.selected::after {
+        position: relative;
+        top: auto;
+        right: auto;
+        display: inline-block;
+        margin-top: 8px;
+        text-align: center;
+    }
+}
+
+/* Landscape mode on phones */
+@media (max-height: 500px) and (orientation: landscape) {
+    .mobile-map-picker-container {
+        height: 250px;
+    }
+    
+    .mobile-booking-step-content {
+        max-height: calc(100vh - 100px);
+    }
+    
+    .mobile-drivers-list {
+        max-height: 200px;
+    }
+    
+    .mobile-action-buttons {
+        position: sticky;
+        bottom: 0;
+    }
+}
+
+/* Ensure map container is visible on all devices */
+.mobile-map {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Remove any border radius that might create white space on edges */
+.mobile-book-ride-container,
+.mobile-book-ride-view,
+.mobile-booking-step-content {
+    border-radius: 0 !important;
+}
+
+/* Ensure full width on all screen sizes */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mobile-book-ride-container {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        min-width: 100vw !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .mobile-book-ride-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+}

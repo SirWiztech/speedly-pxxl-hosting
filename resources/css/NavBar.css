@@ -1,0 +1,364 @@
+/* ============================================
+   SPEEDLY - NAVIGATION COMPONENTS CSS
+   Client & Driver Navigation (Mobile & Desktop)
+   White Background with Orange/Red Accents
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   ROOT VARIABLES
+   ============================================ */
+:root {
+    --primary-orange: #ff5e00;
+    --primary-orange-dark: #e05500;
+    --primary-orange-light: #ff8c3a;
+    --primary-orange-gradient: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    --primary-orange-soft: rgba(255, 94, 0, 0.08);
+    --primary-orange-medium: rgba(255, 94, 0, 0.12);
+    
+    --sidebar-bg: #FFFFFF;
+    --sidebar-border: rgba(255, 94, 0, 0.1);
+    --sidebar-hover: rgba(255, 94, 0, 0.05);
+    
+    --white-base: #FFFFFF;
+    --white-off: #FAFAFA;
+    
+    --text-dark: #1A1A1A;
+    --text-dark-secondary: #4a5568;
+    --text-muted: #94a3b8;
+    
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+}
+
+/* ============================================
+   DESKTOP SIDEBAR - FIXED ON LEFT
+   ============================================ */
+
+.desktop-sidebar {
+    width: 280px;
+    height: 100vh;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar for Sidebar */
+.desktop-sidebar::-webkit-scrollbar {
+    width: 3px;
+}
+
+.desktop-sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+}
+
+.desktop-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 94, 0, 0.3);
+    border-radius: 3px;
+}
+
+.desktop-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 94, 0, 0.5);
+}
+
+/* Logo Section */
+.desktop-sidebar .logo {
+    padding: 32px 24px;
+    border-bottom: 1px solid var(--sidebar-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.desktop-sidebar .logo-image {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Desktop Navigation */
+.desktop-sidebar .desktop-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 4px;
+}
+
+.desktop-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--text-dark-secondary);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all var(--transition-fast);
+}
+
+.desktop-nav-item:hover {
+    background: var(--sidebar-hover);
+    color: var(--primary-orange);
+}
+
+.desktop-nav-item.active {
+    background: var(--primary-orange-gradient);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 94, 0, 0.25);
+}
+
+.desktop-nav-item.active .desktop-nav-icon {
+    color: white;
+}
+
+.desktop-nav-icon {
+    width: 22px;
+    font-size: 18px;
+    transition: transform var(--transition-fast);
+    color: var(--text-muted);
+}
+
+.desktop-nav-item.active .desktop-nav-icon {
+    color: white;
+}
+
+.desktop-nav-item:hover .desktop-nav-icon {
+    color: var(--primary-orange);
+    transform: scale(1.05);
+}
+
+.desktop-nav-item span {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* User Profile Section */
+.desktop-sidebar .user-profile {
+    margin: 16px;
+    padding: 16px;
+    background: var(--sidebar-hover);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: 1px solid var(--sidebar-border);
+    text-decoration: none;
+}
+
+.desktop-sidebar .user-profile:hover {
+    background: var(--primary-orange-soft);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.profile-avatar {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-orange-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    box-shadow: 0 4px 10px rgba(255, 94, 0, 0.2);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-info h3 {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-info p {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--primary-orange);
+    font-family: 'Outfit', sans-serif;
+}
+
+/* ============================================
+   MOBILE BOTTOM NAVIGATION
+   ============================================ */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--white-base);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 16px 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    border-top: 1px solid var(--sidebar-border);
+}
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .bottom-nav {
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: all var(--transition-fast);
+    flex: 1;
+    max-width: 70px;
+}
+
+.nav-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+}
+
+.nav-icon {
+    font-size: 20px;
+    transition: all var(--transition-fast);
+}
+
+.nav-item span {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: 'Outfit', sans-serif;
+    transition: all var(--transition-fast);
+}
+
+.nav-item.active {
+    color: var(--primary-orange);
+}
+
+.nav-item.active .nav-icon-wrapper {
+    background: var(--primary-orange-soft);
+}
+
+.nav-item.active .nav-icon {
+    transform: scale(1.05);
+    color: var(--primary-orange);
+}
+
+.nav-item.active span {
+    font-weight: 600;
+    color: var(--primary-orange);
+}
+
+.nav-item:hover {
+    color: var(--primary-orange);
+}
+
+.nav-item:hover .nav-icon-wrapper {
+    background: var(--primary-orange-soft);
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile: Hide sidebar by default, show as drawer */
+@media (max-width: 1024px) {
+    .desktop-sidebar {
+        transform: translateX(-100%);
+        transition: transform var(--transition-normal);
+        z-index: 1000;
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .desktop-sidebar.mobile-open {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .bottom-nav {
+        padding: 8px 12px 16px;
+    }
+    
+    .nav-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .nav-icon {
+        font-size: 18px;
+    }
+    
+    .nav-item span {
+        font-size: 9px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .bottom-nav {
+        padding: 6px 12px 12px;
+    }
+    
+    .nav-icon-wrapper {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .nav-icon {
+        font-size: 16px;
+    }
+    
+    .nav-item span {
+        font-size: 9px;
+    }
+}

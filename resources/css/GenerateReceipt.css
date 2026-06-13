@@ -1,0 +1,299 @@
+/* GenerateReceipt.css — White + OrangeRed Speedly Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: 'Syne', 'Segoe UI', sans-serif; background: #f5f5f5; }
+
+/* ─── Page ─── */
+.receipt-page {
+    min-height: 100vh;
+    height: 100vh;
+    background: linear-gradient(135deg, #fff 0%, #fff5f0 100%);
+    padding: 30px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ─── Card ─── */
+.receipt-container {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(255, 69, 0, 0.10), 0 2px 10px rgba(0,0,0,0.06);
+    flex-shrink: 0;
+}
+
+.receipt-top-border {
+    height: 6px;
+    background: linear-gradient(90deg, #ff4500, #ff6a33, #ff4500);
+}
+
+/* ─── Header ─── */
+.receipt-header {
+    text-align: center;
+    padding: 32px 24px 20px;
+}
+
+.receipt-logo { height: 40px; margin-bottom: 16px; object-fit: contain; }
+
+.receipt-header h1 {
+    font-size: 22px; font-weight: 800; color: #ff4500;
+    letter-spacing: 3px; text-transform: uppercase;
+}
+
+.receipt-subtitle { font-size: 12px; color: #888; margin-top: 4px; font-weight: 500; }
+
+/* ─── Divider ─── */
+.receipt-divider {
+    display: flex; align-items: center; gap: 16px;
+    padding: 0 24px; margin-bottom: 8px;
+}
+.receipt-divider::before,
+.receipt-divider::after {
+    content: ''; flex: 1; height: 1px; background: #e0e0e0;
+}
+.receipt-divider span {
+    font-size: 11px; font-weight: 600; color: #ff4500;
+    background: #fff; padding: 0 12px; letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* ─── Body ─── */
+.receipt-body { padding: 8px 24px 24px; }
+
+/* ─── Sections ─── */
+.info-section, .locations-section, .parties-section,
+.vehicle-section, .fare-section, .payment-section, .qr-section {
+    margin-bottom: 20px;
+}
+
+.info-section h3, .fare-section h3, .payment-section h3 {
+    font-size: 13px; font-weight: 700; color: #ff4500;
+    margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;
+    display: flex; align-items: center; gap: 6px;
+}
+.info-section h3 i, .fare-section h3 i, .payment-section h3 i {
+    font-size: 14px; color: #ff6a33;
+}
+
+/* ─── Info Grid ─── */
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.info-item {
+    background: #fafafa; border: 1px solid #f0f0f0;
+    border-radius: 10px; padding: 10px 12px;
+}
+.info-item .info-label {
+    display: block; font-size: 10px; font-weight: 600;
+    color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;
+}
+.info-item .info-value {
+    display: block; font-size: 13px; font-weight: 600; color: #222;
+}
+.capitalize { text-transform: capitalize; }
+
+.status-badge {
+    display: inline-block; background: #e8f5e9; color: #2e7d32;
+    font-size: 10px; font-weight: 700; padding: 2px 10px;
+    border-radius: 20px; letter-spacing: 0.5px;
+}
+
+/* ─── Locations ─── */
+.locations-section {
+    background: #fafafa; border: 1px solid #f0f0f0;
+    border-radius: 12px; padding: 16px;
+}
+.location-block { display: flex; align-items: flex-start; gap: 12px; }
+.location-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    flex-shrink: 0; margin-top: 4px;
+}
+.location-dot.pickup { background: #ff4500; box-shadow: 0 0 0 3px rgba(255,69,0,0.15); }
+.location-dot.dropoff { background: #cc3700; box-shadow: 0 0 0 3px rgba(204,55,0,0.15); }
+.location-line {
+    width: 2px; height: 28px;
+    background: linear-gradient(#ff4500, #cc3700);
+    margin: 4px 0 4px 5px;
+}
+.location-content { flex: 1; }
+.location-label {
+    font-size: 10px; font-weight: 700; color: #999;
+    text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;
+}
+.location-address { font-size: 13px; font-weight: 500; color: #333; line-height: 1.4; }
+
+/* ─── Parties ─── */
+.parties-section { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.party-card {
+    background: #fafafa; border: 1px solid #f0f0f0;
+    border-radius: 12px; padding: 12px;
+    display: flex; align-items: center; gap: 10px;
+}
+.party-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 15px; flex-shrink: 0;
+}
+.party-info { flex: 1; min-width: 0; }
+.party-label {
+    font-size: 9px; font-weight: 700; color: #999;
+    text-transform: uppercase; letter-spacing: 0.5px; display: block;
+}
+.party-name {
+    font-size: 13px; font-weight: 600; color: #222;
+    display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.party-contact { font-size: 11px; color: #888; }
+
+/* ─── Vehicle ─── */
+.vehicle-section {
+    background: #fafafa; border: 1px solid #f0f0f0;
+    border-radius: 10px; padding: 12px 16px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 500; color: #333;
+}
+.vehicle-section i { color: #ff4500; font-size: 16px; }
+.plate {
+    margin-left: auto; font-family: 'Courier New', monospace;
+    font-weight: 700; color: #ff4500; background: #fff0ea;
+    padding: 2px 10px; border-radius: 6px; font-size: 12px;
+}
+
+/* ─── Fare ─── */
+.fare-table {
+    background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; padding: 4px 0;
+}
+.fare-row {
+    display: flex; justify-content: space-between;
+    padding: 10px 16px; font-size: 13px; color: #444;
+}
+.fare-row.divider { border-top: 1px dashed #ddd; padding: 0; height: 1px; }
+.fare-row.total {
+    font-weight: 700; color: #ff4500; font-size: 15px; padding: 14px 16px;
+}
+.fare-row.total span:last-child { font-size: 17px; }
+
+/* ─── Payment ─── */
+.payment-card {
+    background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; overflow: hidden;
+}
+.payment-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 16px; font-size: 13px; color: #444;
+}
+.payment-row + .payment-row { border-top: 1px solid #f0f0f0; }
+.payment-row i { color: #ff4500; width: 18px; margin-right: 4px; }
+.payment-amount { font-weight: 700; color: #222; }
+.payment-amount.driver { color: #2e7d32; }
+.payment-row.muted { color: #999; font-size: 11px; }
+.payment-row.muted .ref { font-family: 'Courier New', monospace; font-size: 10px; color: #888; }
+
+/* ─── QR ─── */
+.qr-section { text-align: center; padding: 16px 0 4px; }
+.qr-section img {
+    width: 80px; height: 80px; border: 1px solid #eee;
+    border-radius: 8px; padding: 4px;
+}
+.qr-section p {
+    font-size: 10px; color: #999; margin-top: 6px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+/* ─── Footer ─── */
+.receipt-footer {
+    border-top: 1px solid #f0f0f0; padding: 20px 24px; text-align: center;
+}
+.footer-brand {
+    font-size: 16px; font-weight: 700; color: #ff4500;
+    letter-spacing: 2px; margin-bottom: 8px;
+}
+.footer-brand i { color: #ff6a33; }
+.footer-contact { font-size: 11px; color: #888; margin-bottom: 6px; }
+.sep { margin: 0 8px; color: #ddd; }
+.footer-copy { font-size: 10px; color: #aaa; margin-bottom: 2px; }
+.footer-disclaimer { font-size: 9px; color: #bbb; font-style: italic; }
+
+/* ─── Action Buttons ─── */
+.receipt-actions {
+    max-width: 500px; width: 100%;
+    display: flex; flex-wrap: wrap; gap: 8px;
+    justify-content: center; margin-top: 20px;
+}
+.action-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 10px 18px; border: 2px solid #ff4500; border-radius: 50px;
+    background: #fff; color: #ff4500;
+    font-family: 'Syne', 'Segoe UI', sans-serif;
+    font-size: 12px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s ease;
+}
+.action-btn:hover {
+    background: #ff4500; color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255,69,0,0.25);
+}
+.action-btn:active { transform: translateY(0); }
+.action-btn i { font-size: 14px; }
+.action-btn.book { background: #ff4500; color: #fff; }
+.action-btn.book:hover { background: #cc3700; border-color: #cc3700; }
+.action-btn.download { background: #ff4500; color: #fff; border-color: #ff4500; flex: 1; min-width: 140px; }
+.action-btn.download:hover { background: #cc3700; border-color: #cc3700; }
+
+/* ─── Loading / Error ─── */
+.receipt-loading, .receipt-error {
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background: #fff; color: #888; gap: 12px; padding: 24px;
+}
+.receipt-loading .spinner {
+    width: 40px; height: 40px;
+    border: 3px solid #f0f0f0; border-top-color: #ff4500;
+    border-radius: 50%; animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.receipt-error i { font-size: 48px; color: #ff4500; }
+.receipt-error p { font-size: 15px; color: #666; }
+.btn-back {
+    margin-top: 8px; padding: 10px 24px;
+    border: 2px solid #ff4500; border-radius: 50px;
+    background: #fff; color: #ff4500;
+    font-family: 'Syne', 'Segoe UI', sans-serif;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-back:hover { background: #ff4500; color: #fff; }
+
+/* ─── Responsive ─── */
+@media (max-width: 540px) {
+    .receipt-page { padding: 12px 8px; }
+    .receipt-header { padding: 24px 16px 16px; }
+    .receipt-header h1 { font-size: 18px; }
+    .receipt-logo { height: 32px; }
+    .receipt-divider { padding: 0 16px; }
+    .receipt-body { padding: 4px 16px 16px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .parties-section { grid-template-columns: 1fr; }
+    .receipt-footer { padding: 16px; }
+    .receipt-actions { flex-direction: column; padding: 0 6px; }
+    .action-btn { width: 100%; justify-content: center; padding: 12px; }
+    .action-btn.download { flex: none; }
+}
+
+@media (min-width: 768px) {
+    .receipt-container { max-width: 560px; }
+}
+
+/* ─── Print ─── */
+@media print {
+    body { background: #fff !important; }
+    .receipt-page { background: #fff !important; padding: 0 !important; }
+    .receipt-container { box-shadow: none !important; border-radius: 0 !important; max-width: 100% !important; }
+    .receipt-actions { display: none !important; }
+}

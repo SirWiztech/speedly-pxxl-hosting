@@ -1,0 +1,843 @@
+/* ===== DRIVER WALLET CSS - DESKTOP ONLY ===== */
+/* Premium Design System with Working Scrollbars */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    font-family: 'Outfit', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+}
+
+/* Roboto font for numbers - Global number styling */
+.font-roboto-number,
+.hero-balance-amount,
+.hero-stat-value,
+.earning-amount-desktop,
+.withdrawal-amount,
+.summary-value,
+.tips-stat-value,
+.amount-value,
+.price-value,
+.balance-number {
+    font-family: 'Roboto', sans-serif;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.5px;
+}
+
+/* ========== DESKTOP VIEW ========== */
+
+.driver-wallet-desktop-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background: #f8f9fa;
+    position: relative;
+    margin-right: 620px;
+}
+
+.driver-wallet-desktop-main {
+    flex: 1;
+    margin-left: 280px;
+    padding: 30px;
+    min-height: 100vh;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Desktop Scrollable Content */
+.wallet-desktop-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 100px);
+    padding-bottom: 30px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Scrollbar for Desktop */
+.wallet-desktop-scroll-content::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+}
+
+.wallet-desktop-scroll-content::-webkit-scrollbar-track {
+    background: #e8e8e8;
+    border-radius: 10px;
+    margin: 12px 0;
+}
+
+.wallet-desktop-scroll-content::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.wallet-desktop-scroll-content::-webkit-scrollbar-thumb:hover {
+    background: #e55500;
+}
+
+/* Firefox */
+.wallet-desktop-scroll-content {
+    scrollbar-width: thin;
+    scrollbar-color: #ff5e00 #e8e8e8;
+}
+
+/* Desktop Header */
+.wallet-desktop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-shrink: 0;
+    background: transparent;
+}
+
+.wallet-header-title h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    font-family: 'Syne', sans-serif;
+}
+
+.wallet-header-title p {
+    font-size: 14px;
+    color: #888;
+}
+
+.wallet-desktop-notification {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.wallet-desktop-notification:hover {
+    background: #ff5e00;
+    color: white;
+    border-color: #ff5e00;
+    transform: translateY(-2px);
+}
+
+.notif-badge-desktop {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ef4444;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+
+/* API Alert */
+.api-alert {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 12px 18px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    flex-shrink: 0;
+    border-left: 4px solid #f59e0b;
+}
+
+.api-alert i {
+    font-size: 18px;
+}
+
+/* Hero Card - Matching Sidebar Color */
+.wallet-hero-card {
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    border-radius: 28px;
+    padding: 36px 32px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(255, 94, 0, 0.3);
+}
+
+.hero-card-bg {
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.hero-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.hero-balance-section {
+    flex: 0 0 auto;
+}
+
+.hero-balance-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.hero-balance-amount {
+    font-size: 58px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 28px;
+    letter-spacing: -2px;
+    font-family: 'Roboto', sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+
+.hero-balance-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-withdraw-btn,
+.hero-add-btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.hero-withdraw-btn {
+    background: white;
+    color: #ff5e00;
+}
+
+.hero-withdraw-btn:hover {
+    background: #fff8f5;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.hero-add-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.hero-add-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-3px);
+}
+
+.hero-stats-section {
+    display: flex;
+    gap: 45px;
+    flex-wrap: wrap;
+}
+
+.hero-stat {
+    text-align: center;
+    min-width: 110px;
+}
+
+.hero-stat-label {
+    display: block;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero-stat-value {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Desktop Grid */
+.wallet-desktop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 30px;
+}
+
+.wallet-card {
+    background: white !important;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.wallet-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.card-header-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 26px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card-header-custom h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Syne', sans-serif;
+}
+
+.card-header-custom h3 i {
+    color: #ff5e00;
+    font-size: 20px;
+}
+
+.view-all-link {
+    background: none;
+    border: none;
+    color: #ff5e00;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+    padding: 6px 12px;
+    border-radius: 30px;
+}
+
+.view-all-link:hover {
+    background: #fff5f0;
+    gap: 10px;
+}
+
+/* Earnings List Desktop */
+.earnings-list-desktop {
+    flex: 1;
+    max-height: 380px;
+    overflow-y: auto;
+}
+
+/* Scrollbar inside earnings list */
+.earnings-list-desktop::-webkit-scrollbar {
+    width: 4px;
+}
+
+.earnings-list-desktop::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.earnings-list-desktop::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 10px;
+}
+
+.earning-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background 0.25s ease;
+}
+
+.earning-row:hover {
+    background: #fafafa;
+    cursor: pointer;
+}
+
+.earning-row.last {
+    border-bottom: none;
+}
+
+.earning-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    background: #fff5f0;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.earning-icon-wrapper i {
+    font-size: 22px;
+    color: #ff5e00;
+}
+
+.earning-details {
+    flex: 1;
+}
+
+.earning-route {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.earning-route .pickup {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.earning-route .destination {
+    font-size: 14px;
+    color: #666;
+}
+
+.arrow-icon {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.earning-meta {
+    display: flex;
+    gap: 18px;
+    font-size: 11px;
+    color: #999;
+}
+
+.earning-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.earning-amount-desktop {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+
+.earning-amount-desktop.positive {
+    color: #10b981;
+}
+
+/* Withdrawals List Desktop */
+.withdrawals-list-desktop {
+    flex: 1;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.withdrawals-list-desktop::-webkit-scrollbar {
+    width: 4px;
+}
+
+.withdrawals-list-desktop::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.withdrawals-list-desktop::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 10px;
+}
+
+.withdrawal-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background 0.25s ease;
+}
+
+.withdrawal-row:hover {
+    background: #fafafa;
+}
+
+.withdrawal-icon {
+    width: 48px;
+    height: 48px;
+    background: #f0f7ff;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.withdrawal-icon i {
+    font-size: 20px;
+    color: #3b82f6;
+}
+
+.withdrawal-details {
+    flex: 1;
+}
+
+.withdrawal-amount {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+
+.withdrawal-meta {
+    font-size: 11px;
+    color: #999;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Status Badges */
+.status-badge-pending,
+.status-badge-approved,
+.status-badge-paid,
+.status-badge-rejected {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status-badge-pending {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.status-badge-approved {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.status-badge-paid {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge-rejected {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Withdrawal Summary */
+.withdrawal-summary {
+    display: flex;
+    gap: 30px;
+    padding: 18px 26px;
+    background: #f9f9f9;
+    border-top: 1px solid #f0f0f0;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    font-size: 13px;
+}
+
+.summary-label {
+    color: #888;
+    font-weight: 500;
+}
+
+.summary-value {
+    font-weight: 700;
+    color: #1a1a1a;
+    font-family: 'Roboto', sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+
+.summary-value.pending {
+    color: #f59e0b;
+}
+
+/* Tips Card */
+.wallet-tips-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    border-radius: 24px;
+    padding: 24px 32px;
+    color: white;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.wallet-tips-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.tips-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.tips-content {
+    flex: 1;
+}
+
+.tips-content h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-family: 'Syne', sans-serif;
+}
+
+.tips-content p {
+    font-size: 13px;
+    opacity: 0.85;
+    line-height: 1.5;
+}
+
+.tips-stat {
+    text-align: center;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 16px;
+    min-width: 100px;
+}
+
+.tips-stat-label {
+    display: block;
+    font-size: 11px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tips-stat-value {
+    display: block;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Empty States Desktop */
+.empty-state-desktop {
+    text-align: center;
+    padding: 60px 24px;
+    color: #9ca3af;
+}
+
+.empty-state-desktop i {
+    font-size: 56px;
+    margin-bottom: 16px;
+    opacity: 0.4;
+}
+
+.empty-state-desktop p {
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.empty-state-desktop span {
+    font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .wallet-desktop-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .hero-card-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .hero-stats-section {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .hero-balance-amount {
+        font-size: 46px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .driver-wallet-desktop-main {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .driver-wallet-desktop-main {
+        margin-left: 0;
+        padding: 0;
+    }
+    
+    .wallet-desktop-header {
+        padding: 16px;
+        margin-bottom: 0;
+    }
+    
+    .wallet-header-title h1 {
+        font-size: 24px;
+    }
+    
+    .wallet-desktop-scroll-content {
+        height: auto;
+        max-height: calc(100vh - 80px);
+        padding: 0 16px 30px;
+    }
+    
+    .hero-balance-amount {
+        font-size: 36px;
+    }
+    
+    .hero-stats-section {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    
+    .hero-stat {
+        min-width: auto;
+        flex: 1;
+    }
+    
+    .hero-stat-value {
+        font-size: 18px;
+    }
+    
+    .wallet-tips-card {
+        flex-direction: column;
+        text-align: center;
+        margin: 0 0 20px;
+    }
+    
+    .tips-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+}
+
+/* Animation for scroll indicators */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.earning-row, .withdrawal-row {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Ensure proper scrolling on all devices */
+@media (min-width: 1025px) {
+    .driver-wallet-desktop-container {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .wallet-desktop-scroll-content {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: calc(100vh - 100px);
+    }
+}
+
+
+#root, #app, .app {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Additional Roboto number styling for any other numeric elements */
+.hero-balance-amount,
+.hero-stat-value,
+.earning-amount-desktop,
+.withdrawal-amount,
+.summary-value,
+.tips-stat-value,
+.notif-badge-desktop {
+    font-feature-settings: 'tnum';
+    font-variant-numeric: tabular-nums;
+}
+
+/* Style for currency amounts in buttons and other places */
+button span.font-roboto-number,
+button .font-roboto-number {
+    font-family: 'Roboto', sans-serif;
+    font-variant-numeric: tabular-nums;
+}

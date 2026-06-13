@@ -1,0 +1,599 @@
+/* Client Location Mobile Styles - FULLY RESPONSIVE */
+/* ALL SELECTORS HAVE "mobile-" PREFIX */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full width container - spans entire page width */
+.mobile-location-container {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Full width viewport with vertical scroll */
+.mobile-location-view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom Scrollbar */
+.mobile-location-view::-webkit-scrollbar {
+    width: 4px;
+}
+
+.mobile-location-view::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.mobile-location-view::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 10px;
+}
+
+/* Header */
+.mobile-location-header {
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.mobile-location-user-info h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2px;
+}
+
+.mobile-location-user-info p {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Enable Location Button */
+.mobile-enable-location-btn-container {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-enable-location-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff5e00, #ff8c3a);
+    border: none;
+    padding: 18px 20px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 94, 0, 0.3);
+}
+
+.mobile-enable-location-btn:active {
+    transform: scale(0.98);
+}
+
+.mobile-enable-location-hint {
+    font-size: 12px;
+    color: #888;
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* Permission Prompt */
+.mobile-permission-prompt {
+    background: white;
+    border: 2px solid rgba(255, 107, 107, 0.3);
+    border-radius: 24px;
+    padding: 20px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.mobile-permission-prompt i {
+    font-size: 36px;
+    color: #ff6b6b;
+}
+
+.mobile-permission-prompt span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+.mobile-permission-prompt p {
+    font-size: 13px;
+    color: #666;
+}
+
+.mobile-permission-prompt button {
+    background: linear-gradient(135deg, #ff5e00, #ff8c3a);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* GPS Status Card */
+.mobile-location-card {
+    background: white;
+    border-radius: 24px;
+    padding: 20px;
+    margin: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.mobile-location-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.mobile-location-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-gps-pulse {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #4caf50;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
+    animation: mobilePulse 2s infinite;
+}
+
+@keyframes mobilePulse {
+    0% { box-shadow: 0 0 5px rgba(76, 175, 80, 0.6); transform: scale(1); }
+    50% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.8); transform: scale(1.1); }
+    100% { box-shadow: 0 0 5px rgba(76, 175, 80, 0.6); transform: scale(1); }
+}
+
+.mobile-gps-pulse.inactive {
+    background: #ff6b6b;
+    animation: none;
+}
+
+.mobile-gps-state {
+    font-size: 12px;
+    font-weight: 700;
+    color: #4caf50;
+}
+
+.mobile-gps-badge {
+    background: linear-gradient(135deg, #ff5e00, #ff8c3a);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 25px;
+    font-size: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* GPS Control Buttons */
+.mobile-gps-control {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.mobile-stop-gps-btn,
+.mobile-start-gps-btn {
+    background: rgba(255, 94, 0, 0.1);
+    border: 1px solid #ff5e00;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-stop-gps-btn {
+    color: #ef4444;
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.mobile-start-gps-btn {
+    color: #4caf50;
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+/* Street Address */
+.mobile-street-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.mobile-street-address i {
+    color: #ff5e00;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.mobile-street-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.mobile-full-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 16px;
+}
+
+.mobile-full-address i {
+    color: #888;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.mobile-full-address span {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Coordinate Grid */
+.mobile-coordinate-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.mobile-coord-item {
+    background: linear-gradient(135deg, #fff8f5, #fff5f0);
+    border-radius: 14px;
+    padding: 12px 8px;
+    text-align: center;
+}
+
+.mobile-coord-item i {
+    display: block;
+    font-size: 16px;
+    color: #ff5e00;
+    margin-bottom: 4px;
+}
+
+.mobile-coord-item .coord-label {
+    font-size: 9px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.mobile-coord-item .coord-value {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-family: monospace;
+}
+
+/* Movement Stats */
+.mobile-movement-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.mobile-stat-badge {
+    background: linear-gradient(135deg, #ff5e00, #ff8c3a);
+    border-radius: 14px;
+    padding: 12px 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: white;
+}
+
+.mobile-stat-badge i {
+    font-size: 16px;
+}
+
+.mobile-stat-badge .stat-label {
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+}
+
+.mobile-stat-badge .stat-value {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.mobile-stat-badge .stat-unit {
+    font-size: 9px;
+    opacity: 0.7;
+}
+
+/* Map Container */
+.mobile-map-container {
+    position: relative;
+    margin: 0 0 16px 0;
+    overflow: hidden;
+    border: none;
+    height: 45vh;
+    min-height: 300px;
+    width: 100%;
+}
+
+.mobile-map {
+    width: 100%;
+    height: 100%;
+}
+
+/* Map Controls */
+.mobile-map-controls {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+.mobile-map-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    color: #ff5e00;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.mobile-map-btn:active {
+    transform: scale(0.95);
+}
+
+/* Direction Arrow */
+.mobile-direction-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff5e00, #ff8c3a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 30px rgba(255, 94, 0, 0.5);
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.mobile-direction-arrow i {
+    font-size: 22px;
+    color: white;
+}
+
+/* Places Panel */
+.mobile-places-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 24px 24px 0 0;
+    padding: 16px;
+    max-height: 40vh;
+    overflow-y: auto;
+    z-index: 15;
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-places-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.mobile-places-header h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.mobile-close-places {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    border: none;
+    color: #666;
+    cursor: pointer;
+}
+
+.mobile-places-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mobile-place-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #fafafa;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mobile-place-item:active {
+    background: #fff5f0;
+}
+
+.mobile-place-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 94, 0, 0.15), rgba(255, 140, 58, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff5e00;
+    font-size: 18px;
+}
+
+.mobile-place-info {
+    flex: 1;
+}
+
+.mobile-place-info h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.mobile-place-info p {
+    font-size: 11px;
+    color: #888;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Small phones */
+@media (max-width: 380px) {
+    .mobile-location-card {
+        padding: 16px;
+        margin: 12px;
+    }
+    
+    .mobile-street-name {
+        font-size: 14px;
+    }
+    
+    .mobile-coord-item .coord-value {
+        font-size: 10px;
+    }
+    
+    .mobile-stat-badge .stat-value {
+        font-size: 14px;
+    }
+    
+    .mobile-coordinate-row {
+        gap: 8px;
+    }
+    
+    .mobile-movement-stats {
+        gap: 8px;
+    }
+}
+
+/* Landscape mode */
+@media (orientation: landscape) and (max-height: 500px) {
+    .mobile-map-container {
+        height: 35vh;
+        min-height: 200px;
+    }
+    
+    .mobile-location-card {
+        margin: 8px 12px;
+        padding: 12px;
+    }
+    
+    .mobile-coordinate-row {
+        gap: 8px;
+    }
+    
+    .mobile-movement-stats {
+        gap: 8px;
+    }
+}
+
+/* Safe Area Support */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .mobile-location-view {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom));
+    }
+}
+
+/* Ensure no horizontal scroll */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fix for iOS Safari viewport */
+@supports (-webkit-touch-callout: none) {
+    .mobile-location-view {
+        height: -webkit-fill-available;
+    }
+}

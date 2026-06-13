@@ -1,0 +1,1462 @@
+/* Driver Profile Styles - Premium Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Outfit', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+}
+
+.driver-profile-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    overflow: visible;
+    animation: slideUp 0.6s ease-out;
+    position: relative;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.driver-profile-header {
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    padding: 40px;
+    color: white;
+    position: relative;
+}
+
+.driver-profile-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.driver-profile-header p {
+    opacity: 0.9;
+    font-size: 16px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-5px);
+}
+
+.notification-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    font-size: 20px;
+}
+
+.notification-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ef4444;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Profile Content */
+.driver-profile-content {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 30px;
+    padding: 40px;
+}
+
+/* Sidebar */
+.driver-profile-sidebar {
+    background: #fafafa;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.profile-pic-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.profile-pic-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: white;
+    font-weight: 600;
+    border: 4px solid white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.upload-pic-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 36px;
+    height: 36px;
+    background: #ff5e00;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.upload-pic-btn:hover {
+    transform: scale(1.1);
+}
+
+.driver-profile-sidebar h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.profile-email {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+/* KYC Badges */
+.kyc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.kyc-badge.approved {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.kyc-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.kyc-badge.rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.kyc-badge.missing {
+    background: #f0f0f0;
+    color: #666;
+}
+
+/* Availability Toggle */
+.availability-toggle {
+    background: white;
+    border-radius: 50px;
+    padding: 4px;
+    display: flex;
+    margin: 16px 0;
+    border: 2px solid #eee;
+    gap: 4px;
+}
+
+.availability-option {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.availability-option.available.active {
+    background: #10b981;
+    color: white;
+}
+
+.availability-option.offline.active {
+    background: #ef4444;
+    color: white;
+}
+
+.availability-option:not(.active) {
+    background: transparent;
+    color: #666;
+}
+
+.availability-option:not(.active):hover {
+    background: #f5f5f5;
+}
+
+/* Rating Badge */
+.rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff8e6;
+    color: #ff9800;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.rating-badge i {
+    color: #ff9800;
+}
+
+.rating-count {
+    color: #888;
+    font-weight: normal;
+}
+
+/* Stats Cards */
+.stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.stat-icon.earnings {
+    background: #e8f5e9;
+    color: #4caf50;
+}
+
+.stat-icon.rides {
+    background: #e3f2fd;
+    color: #2196f3;
+}
+
+.stat-icon.wallet {
+    background: #fff8e6;
+    color: #ff9800;
+}
+
+.stat-details {
+    flex: 1;
+}
+
+.stat-details .stat-label {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.stat-details .stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* Withdraw Button */
+.withdraw-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+    margin: 16px 0;
+}
+
+.withdraw-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Member Since */
+.member-since {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.member-since p {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.member-since .date {
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Main Content */
+.driver-profile-main {
+    background: #fafafa;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #f0f0f0;
+}
+
+/* Tabs */
+.profile-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #eee;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+}
+
+.tab-btn:hover {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.tab-btn.active {
+    background: #fff5f0;
+    color: #ff5e00;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-header {
+    margin-bottom: 20px;
+}
+
+.tab-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+.tab-header h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #ff5e00;
+    border-radius: 2px;
+}
+
+/* Info Grid */
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 30px;
+}
+
+.info-row {
+    display: flex;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    width: 160px;
+    font-size: 14px;
+    color: #888;
+}
+
+.info-value {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Form Styles */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s;
+    font-family: 'Outfit', sans-serif;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #ff5e00;
+    box-shadow: 0 0 0 3px rgba(255, 94, 0, 0.1);
+}
+
+.form-control:disabled {
+    background: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.form-group small {
+    display: block;
+    color: #999;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+}
+
+/* Vehicle Info Card */
+.vehicle-info-card,
+.bank-info-card {
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 24px 0;
+    border-left: 4px solid #ff5e00;
+}
+
+.vehicle-info-card h4,
+.bank-info-card h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vehicle-info-card p,
+.bank-info-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* KYC Section */
+.kyc-info {
+    background: #fff8e6;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
+    border-left: 4px solid #ff9800;
+}
+
+.kyc-info p {
+    font-size: 13px;
+    color: #856404;
+    margin: 0;
+}
+
+.kyc-upload-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.kyc-upload-card {
+    background: white;
+    border: 2px dashed #ddd;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.kyc-upload-card:hover {
+    border-color: #ff5e00;
+    background: #fffaf5;
+}
+
+.kyc-upload-card i {
+    font-size: 48px;
+    color: #ff5e00;
+    margin-bottom: 16px;
+}
+
+.kyc-upload-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.kyc-upload-card p {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.file-input-wrapper {
+    margin-top: 16px;
+}
+
+.file-input-wrapper input[type="file"] {
+    display: none;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f5f5f5;
+    border-radius: 30px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #666;
+}
+
+.file-label:hover {
+    background: #ff5e00;
+    color: white;
+}
+
+.kyc-approved,
+.kyc-pending,
+.kyc-rejected {
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.kyc-approved {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.kyc-approved i {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.kyc-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.kyc-pending i {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.kyc-rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.kyc-rejected i {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+/* Password Hint */
+.password-hint {
+    display: block;
+    color: #888;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/* Security Tips */
+.security-tips {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.security-tips h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.security-tips ul {
+    list-style: none;
+}
+
+.security-tips li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.security-tips li i {
+    color: #28a745;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 94, 0, 0.3);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #ff5e00;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.balance-info {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.balance-info p {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.balance-info h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ff5e00;
+}
+
+.bank-info-display {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 20px 0;
+}
+
+.bank-info-display p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.bank-info-display p:last-child {
+    margin-bottom: 0;
+}
+
+.withdrawal-note {
+    background: #fff8e6;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.withdrawal-note i {
+    color: #ff9800;
+    font-size: 16px;
+}
+
+.withdrawal-note small {
+    color: #856404;
+    font-size: 12px;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-weight: 600;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group .form-control {
+    padding-left: 40px;
+}
+
+/* Withdrawal History */
+.withdrawal-history {
+    margin: 30px 40px 40px;
+    padding: 0;
+}
+
+.withdrawal-history h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.withdrawal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.withdrawal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: #fafafa;
+    border-radius: 16px;
+    border: 1px solid #f0f0f0;
+}
+
+.withdrawal-info h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.withdrawal-info p {
+    font-size: 12px;
+    color: #888;
+}
+
+.withdrawal-status {
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.withdrawal-status.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.withdrawal-status.approved,
+.withdrawal-status.paid {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.withdrawal-status.rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.withdrawal-status.processing {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Small desktops / large tablets landscape */
+@media (max-width: 1200px) {
+    .driver-profile-content {
+        grid-template-columns: 280px 1fr;
+        gap: 24px;
+        padding: 32px;
+    }
+
+    .driver-profile-header {
+        padding: 32px;
+    }
+
+    .driver-profile-header h1 {
+        font-size: 28px;
+    }
+
+    .driver-profile-main {
+        padding: 24px;
+    }
+}
+
+/* Tablets landscape */
+@media (max-width: 1024px) {
+    .driver-profile-content {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+    
+    .driver-profile-sidebar {
+        position: static;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .kyc-upload-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .driver-profile-header h1 {
+        font-size: 26px;
+    }
+}
+
+/* Tablets portrait */
+@media (max-width: 860px) {
+    body {
+        padding: 12px;
+    }
+
+    .driver-profile-header {
+        padding: 24px 20px;
+    }
+
+    .driver-profile-header h1 {
+        font-size: 24px;
+        padding-right: 120px;
+    }
+
+    .driver-profile-header p {
+        font-size: 14px;
+    }
+
+    .driver-profile-content {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .driver-profile-sidebar {
+        padding: 24px;
+    }
+
+    .driver-profile-main {
+        padding: 20px;
+    }
+
+    .profile-tabs {
+        gap: 6px;
+    }
+
+    .tab-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .info-label {
+        width: 140px;
+    }
+
+    .info-row {
+        gap: 8px;
+    }
+}
+
+/* Large phones */
+@media (max-width: 640px) {
+    body {
+        padding: 10px;
+    }
+
+    .driver-profile-container {
+        border-radius: 20px;
+        max-height: calc(100vh - 20px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .driver-profile-header {
+        padding: 20px 16px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .driver-profile-header h1 {
+        font-size: 22px;
+        padding-right: 110px;
+    }
+
+    .driver-profile-header p {
+        font-size: 13px;
+    }
+
+    .back-btn {
+        top: 16px;
+        right: 60px;
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .notification-btn {
+        top: 16px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .driver-profile-content {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .driver-profile-sidebar {
+        padding: 20px;
+    }
+
+    .profile-pic-container {
+        width: 90px;
+        height: 90px;
+    }
+
+    .profile-pic-placeholder {
+        font-size: 36px;
+    }
+
+    .upload-pic-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .driver-profile-sidebar h3 {
+        font-size: 18px;
+    }
+
+    .stats-grid {
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 12px;
+    }
+
+    .stat-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .stat-details .stat-value {
+        font-size: 16px;
+    }
+
+    .driver-profile-main {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .profile-tabs {
+        gap: 4px;
+        padding-bottom: 8px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .profile-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .tab-content h3 {
+        font-size: 16px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 0;
+    }
+
+    .info-label {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .info-value {
+        font-size: 14px;
+    }
+
+    .form-grid {
+        gap: 14px;
+    }
+
+    .form-control {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+
+    .kyc-upload-grid {
+        gap: 16px;
+    }
+
+    .kyc-upload-card {
+        padding: 20px;
+    }
+
+    .kyc-upload-card i {
+        font-size: 36px;
+    }
+
+    .kyc-approved i {
+        font-size: 36px;
+    }
+
+    .vehicle-info-card,
+    .bank-info-card {
+        padding: 16px;
+    }
+
+    .modal-content {
+        margin: 12px;
+        max-height: 85vh;
+        border-radius: 18px;
+    }
+
+    .modal-header {
+        padding: 16px 20px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-footer {
+        padding: 12px 20px;
+        flex-direction: column;
+    }
+
+    .balance-info h2 {
+        font-size: 28px;
+    }
+
+    .withdrawal-history {
+        margin: 16px;
+    }
+
+    .withdrawal-item {
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px 16px;
+    }
+
+    .security-tips {
+        margin-top: 24px;
+        padding-top: 16px;
+    }
+
+    .security-tips li {
+        font-size: 12px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+    body {
+        padding: 6px;
+    }
+
+    .driver-profile-header {
+        padding: 16px 12px;
+    }
+
+    .driver-profile-header h1 {
+        font-size: 18px;
+        padding-right: 90px;
+    }
+
+    .driver-profile-header p {
+        font-size: 12px;
+    }
+
+    .back-btn {
+        top: 12px;
+        right: 50px;
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+
+    .notification-btn {
+        top: 12px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .driver-profile-content {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .driver-profile-sidebar {
+        padding: 16px;
+    }
+
+    .profile-pic-container {
+        width: 70px;
+        height: 70px;
+    }
+
+    .profile-pic-placeholder {
+        font-size: 28px;
+    }
+
+    .upload-pic-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 10px;
+    }
+
+    .driver-profile-sidebar h3 {
+        font-size: 16px;
+    }
+
+    .stats-grid {
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 10px;
+    }
+
+    .stat-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .stat-details .stat-value {
+        font-size: 15px;
+    }
+
+    .driver-profile-main {
+        padding: 12px;
+    }
+
+    .tab-btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .form-grid {
+        gap: 12px;
+    }
+
+    .kyc-upload-grid {
+        gap: 12px;
+    }
+
+    .kyc-upload-card {
+        padding: 16px;
+    }
+
+    .kyc-upload-card i {
+        font-size: 28px;
+    }
+
+    .withdrawal-history {
+        margin: 10px;
+    }
+}
+
+/* Loading States */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e55500;
+}

@@ -1,0 +1,8 @@
+/public/build/
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+/bootstrap/cache/*
+.DS_Store
+node_modules

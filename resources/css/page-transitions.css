@@ -1,0 +1,182 @@
+/* ============================================
+   PAGE TRANSITION SYSTEM - 2026 DESIGN
+   ============================================ */
+
+:root {
+    --ease-organic: cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-page-load: 0.8s var(--ease-organic);
+    --transition-page-exit: 0.3s var(--ease-smooth);
+}
+
+/* Initial Page Load Animation */
+.page-load-animation {
+    animation: pageFadeIn var(--transition-page-load);
+}
+
+.page-load-animation .navbar {
+    animation: slideDown 0.6s var(--ease-organic) 0.1s both;
+}
+
+.page-load-animation .hero {
+    animation: heroReveal 1s var(--ease-organic) 0.2s both;
+}
+
+.page-load-animation .section-container,
+.page-load-animation .footer-container {
+    animation: fadeUp 0.6s var(--ease-organic) both;
+}
+
+.page-load-animation .footer {
+    animation: fadeIn 0.8s var(--ease-organic) 0.4s both;
+}
+
+/* Stagger children with data-delay attribute */
+.page-load-animation [data-delay="0"] { animation-delay: 0.1s; }
+.page-load-animation [data-delay="1"] { animation-delay: 0.2s; }
+.page-load-animation [data-delay="2"] { animation-delay: 0.3s; }
+.page-load-animation [data-delay="3"] { animation-delay: 0.4s; }
+.page-load-animation [data-delay="4"] { animation-delay: 0.5s; }
+
+/* Page Exit Animation */
+.page-exit {
+    animation: pageExit 0.3s var(--ease-smooth) forwards;
+}
+
+/* Scroll-Triggered Animations */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s var(--ease-organic), transform 0.6s var(--ease-organic);
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fallback: ensure elements are visible after page load */
+.scroll-reveal:not(.revealed) {
+    opacity: 0;
+}
+
+/* Safety: force visibility after 3 seconds */
+body.loaded .scroll-reveal:not(.revealed) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal.scale-in {
+    transform: scale(0.95);
+}
+
+.scroll-reveal.scale-in.revealed {
+    transform: scale(1);
+}
+
+.scroll-reveal.slide-left {
+    transform: translateX(-30px);
+}
+
+.scroll-reveal.slide-left.revealed {
+    transform: translateX(0);
+}
+
+.scroll-reveal.slide-right {
+    transform: translateX(30px);
+}
+
+.scroll-reveal.slide-right.revealed {
+    transform: translateX(0);
+}
+
+/* Loading Skeleton */
+.page-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.page-loading::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Keyframes */
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pageExit {
+    from {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.98);
+        filter: blur(3px);
+    }
+}
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Dark Mode Support */
+.dark .page-loading::after {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}

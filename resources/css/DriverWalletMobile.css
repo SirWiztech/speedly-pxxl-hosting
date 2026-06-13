@@ -1,0 +1,452 @@
+/* Driver Wallet Mobile Styles */
+/* ALL SELECTORS HAVE "mobile-" PREFIX */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full width container for all mobile devices */
+.mobile-driver-wallet-container {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure viewport takes full width on all devices */
+.mobile-driver-wallet-view {
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+/* Custom Scrollbar */
+.mobile-driver-wallet-view::-webkit-scrollbar {
+    width: 4px;
+}
+
+.mobile-driver-wallet-view::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.mobile-driver-wallet-view::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 10px;
+}
+
+/* Header - Full width */
+.mobile-driver-wallet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+.mobile-driver-wallet-user-info h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.mobile-driver-wallet-user-info p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mobile-driver-wallet-notification-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Balance Card - Full width */
+.mobile-wallet-balance-card {
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    margin: 16px;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+}
+
+.balance-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.balance-label {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-bottom: 4px;
+}
+
+.balance-amount {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.total-earnings {
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+.balance-icon {
+    font-size: 28px;
+    opacity: 0.8;
+}
+
+.balance-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.withdraw-btn,
+.history-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    transition: all 0.3s;
+}
+
+.withdraw-btn {
+    background: white;
+    color: #ff5e00;
+}
+
+.withdraw-btn:active {
+    transform: scale(0.97);
+}
+
+.history-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.history-btn:active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0.97);
+}
+
+/* Stats Grid - Responsive full width */
+.mobile-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 0 16px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.mobile-stat-card {
+    background: white;
+    padding: 14px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-stat-card .stat-label {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.mobile-stat-card .stat-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.mobile-stat-card .stat-status {
+    font-size: 10px;
+}
+
+.stat-status.active {
+    color: #10b981;
+}
+
+.stat-status.inactive {
+    color: #9ca3af;
+}
+
+/* Recent Earnings - Full width */
+.mobile-recent-earnings {
+    padding: 0 16px 20px;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.earnings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.earning-item {
+    background: white;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.earning-info {
+    flex: 1;
+}
+
+.earning-date {
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.earning-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.earning-location {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 2px;
+}
+
+.earning-client {
+    font-size: 10px;
+    color: #999;
+}
+
+.earning-amount {
+    text-align: right;
+}
+
+.amount-positive {
+    font-size: 14px;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.amount-subtext {
+    font-size: 10px;
+    color: #999;
+    margin-top: 2px;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #9ca3af;
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+
+.empty-state p {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.empty-state span {
+    font-size: 11px;
+    color: #b0b0b0;
+}
+
+/* Responsive Styles for different screen widths */
+/* Extra small devices (phones, 320px and down) */
+@media (max-width: 320px) {
+    .balance-amount {
+        font-size: 22px;
+    }
+    
+    .mobile-stats-grid {
+        gap: 8px;
+    }
+    
+    .mobile-stat-card {
+        padding: 8px;
+    }
+    
+    .mobile-stat-card .stat-value {
+        font-size: 13px;
+    }
+}
+
+/* Small devices (phones, 321px to 375px) */
+@media (min-width: 321px) and (max-width: 375px) {
+    .balance-amount {
+        font-size: 24px;
+    }
+    
+    .mobile-stats-grid {
+        gap: 10px;
+    }
+    
+    .mobile-stat-card {
+        padding: 10px;
+    }
+    
+    .mobile-stat-card .stat-value {
+        font-size: 14px;
+    }
+}
+
+/* Medium devices (phones, 376px to 425px) */
+@media (min-width: 376px) and (max-width: 425px) {
+    .balance-amount {
+        font-size: 28px;
+    }
+    
+    .mobile-stat-card .stat-value {
+        font-size: 16px;
+    }
+}
+
+/* Large phones (426px to 768px) */
+@media (min-width: 426px) and (max-width: 768px) {
+    .mobile-driver-wallet-container {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+    
+    .balance-amount {
+        font-size: 32px;
+    }
+    
+    .mobile-stats-grid {
+        gap: 14px;
+    }
+    
+    .mobile-stat-card .stat-value {
+        font-size: 18px;
+    }
+}
+
+/* Handle landscape orientation */
+@media (orientation: landscape) and (max-height: 500px) {
+    .mobile-driver-wallet-view {
+        max-height: none;
+        min-height: auto;
+        padding-bottom: 60px;
+    }
+    
+    .mobile-stats-grid {
+        margin-bottom: 12px;
+    }
+    
+    .mobile-recent-earnings {
+        margin-bottom: 12px;
+    }
+}
+
+/* Responsive earning item layout for very narrow screens */
+@media (max-width: 380px) {
+    .earning-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .earning-amount {
+        text-align: left;
+        width: 100%;
+        border-top: 1px solid #f0f0f0;
+        padding-top: 8px;
+        margin-top: 4px;
+    }
+}
+
+/* Safe Area Support */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .mobile-driver-wallet-view {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom));
+    }
+}
+
+/* Ensure no horizontal scroll on any device */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Fix for iOS Safari viewport */
+@supports (-webkit-touch-callout: none) {
+    .mobile-driver-wallet-view {
+        height: -webkit-fill-available;
+    }
+}

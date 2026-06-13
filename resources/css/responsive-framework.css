@@ -1,0 +1,826 @@
+/* =========================================================================
+   SPEEDLY - RESPONSIVE MOBILE-FIRST FRAMEWORK
+   Version: 2.0
+   Author: Mobile Optimization System
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* ========================================================================
+   1. CSS VARIABLES & DESIGN TOKENS
+   ======================================================================== */
+:root {
+    /* PRIMARY COLORS */
+    --primary-color: #ff5e00;
+    --primary-light: #ff8c3a;
+    --primary-gradient: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    
+    /* NEUTRAL COLORS */
+    --dark-900: #0a0a0a;
+    --dark-800: #1a1a1a;
+    --dark-700: #1a1a2e;
+    --dark-600: #333333;
+    --dark-500: #666666;
+    --dark-400: #888888;
+    --dark-300: #999999;
+    --dark-200: #aaaaaa;
+    --dark-100: #cccccc;
+    --light-50: #f9f9f9;
+    --light-100: #f5f5f5;
+    --light-200: #eeeeee;
+    --light-300: #e0e0e0;
+    --light-400: #e8e8e8;
+    --white: #ffffff;
+    
+    /* SEMANTIC COLORS */
+    --success: #4caf50;
+    --warning: #ff9800;
+    --danger: #ff4757;
+    --info: #2196f3;
+    
+    /* SPACING SCALE (8px base) */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 32px;
+    --spacing-3xl: 48px;
+    
+    /* BORDER RADIUS */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+    
+    /* SHADOWS */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+    
+    /* TRANSITIONS */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* TYPOGRAPHY */
+    --font-primary: 'Outfit', sans-serif;
+    --font-heading: 'Syne', sans-serif;
+    --font-size-sm: 12px;
+    --font-size-base: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 32px;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+}
+
+/* ========================================================================
+   2. GLOBAL RESET & BASE STYLES
+   ======================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--dark-600);
+    background: var(--primary-gradient);
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+/* Prevent layout shift */
+html {
+    scrollbar-gutter: stable;
+}
+
+/* ========================================================================
+   3. TYPOGRAPHY
+   ======================================================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--dark-800);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: var(--font-size-2xl);
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+    letter-spacing: -0.3px;
+}
+
+h3 {
+    font-size: var(--font-size-lg);
+}
+
+h4 {
+    font-size: var(--font-size-md);
+}
+
+p {
+    margin-bottom: var(--spacing-lg);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+a:hover {
+    color: var(--primary-light);
+}
+
+/* ========================================================================
+   4. RESPONSIVE BREAKPOINTS
+   ======================================================================== */
+/* Mobile First: Base styles apply to 320px+
+   Tablet: 480px+
+   Large Tablet: 768px+
+   Desktop: 1024px+
+   Large Desktop: 1280px+
+   XL Desktop: 1536px+
+*/
+
+/* ========================================================================
+   5. CONTAINER & LAYOUT (MOBILE FIRST)
+   ======================================================================== */
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.dashboard-container,
+.page-container {
+    width: 100%;
+    max-width: 100vw;
+    background-color: var(--white);
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 70px; /* For fixed bottom nav */
+}
+
+/* Tablet */
+@media (min-width: 480px) {
+    .dashboard-container,
+    .page-container {
+        padding-bottom: 75px;
+    }
+}
+
+/* Large Tablet */
+@media (min-width: 768px) {
+    body {
+        padding: var(--spacing-lg);
+        align-items: center;
+    }
+    
+    .dashboard-container,
+    .page-container {
+        max-width: 100%;
+        border-radius: var(--radius-2xl);
+        box-shadow: var(--shadow-lg);
+        overflow: hidden;
+        min-height: 600px;
+        padding-bottom: 0;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    body {
+        padding: var(--spacing-xl);
+    }
+    
+    .dashboard-container,
+    .page-container {
+        max-width: 1400px;
+        min-height: 700px;
+    }
+}
+
+/* ========================================================================
+   6. VIEW MANAGEMENT (Mobile vs Desktop)
+   ======================================================================== */
+.mobile-view {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.desktop-view {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .mobile-view {
+        display: none;
+    }
+    
+    .desktop-view {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ========================================================================
+   7. HEADER STYLES
+   ======================================================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    background-color: var(--white);
+    border-bottom: 1px solid var(--light-300);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Mobile Header */
+.header .user-info h1 {
+    font-size: var(--font-size-lg);
+    color: var(--dark-800);
+    margin-bottom: var(--spacing-sm);
+}
+
+.header .user-info p {
+    font-size: var(--font-size-sm);
+    color: var(--dark-500);
+}
+
+/* Tablet+ Header */
+@media (min-width: 768px) {
+    .header {
+        padding: var(--spacing-xl);
+    }
+    
+    .header .user-info h1 {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* ========================================================================
+   8. BUTTONS - INDUSTRY STANDARD
+   ======================================================================== */
+.btn,
+button {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    text-align: center;
+}
+
+/* Primary Button */
+.btn-primary,
+.btn.primary {
+    background: var(--primary-gradient);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(255, 94, 0, 0.2);
+}
+
+.btn-primary:active,
+.btn.primary:active {
+    opacity: 0.85;
+    transform: scale(0.98);
+}
+
+.btn-primary:hover,
+.btn.primary:hover {
+    box-shadow: 0 6px 20px rgba(255, 94, 0, 0.3);
+}
+
+/* Secondary Button */
+.btn-secondary,
+.btn.secondary {
+    background: var(--light-100);
+    color: var(--dark-600);
+    border: 1px solid var(--light-300);
+}
+
+.btn-secondary:active,
+.btn.secondary:active {
+    opacity: 0.85;
+    transform: scale(0.98);
+}
+
+/* Danger Button */
+.btn-danger,
+.btn.danger {
+    background: var(--danger);
+    color: var(--white);
+}
+
+/* Success Button */
+.btn-success,
+.btn.success {
+    background: var(--success);
+    color: var(--white);
+}
+
+/* Full Width Button */
+.btn-full {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .btn-full {
+        width: auto;
+    }
+}
+
+/* ========================================================================
+   9. CARDS & CONTAINERS
+   ======================================================================== */
+.card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--light-300);
+    transition: all var(--transition-base);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.card.gradient {
+    background: var(--primary-gradient);
+    color: var(--white);
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+/* Tablet+ Cards */
+@media (min-width: 768px) {
+    .card {
+        padding: var(--spacing-xl);
+        margin-bottom: var(--spacing-xl);
+        border-radius: var(--radius-xl);
+    }
+}
+
+/* ========================================================================
+   10. FORMS & INPUTS
+   ======================================================================== */
+input,
+textarea,
+select {
+    font-family: var(--font-primary);
+    font-size: 16px; /* Prevents iOS zoom */
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 1px solid var(--light-300);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    margin-bottom: var(--spacing-lg);
+    transition: all var(--transition-base);
+    background-color: var(--light-50);
+    color: var(--dark-800);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--dark-400);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--white);
+    box-shadow: 0 0 0 3px rgba(255, 94, 0, 0.1);
+}
+
+input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ========================================================================
+   11. SPACING & PADDING UTILITIES
+   ======================================================================== */
+.p-xs { padding: var(--spacing-xs); }
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+.p-xl { padding: var(--spacing-xl); }
+.p-2xl { padding: var(--spacing-2xl); }
+
+.px-sm { padding-left: var(--spacing-sm); padding-right: var(--spacing-sm); }
+.px-md { padding-left: var(--spacing-md); padding-right: var(--spacing-md); }
+.px-lg { padding-left: var(--spacing-lg); padding-right: var(--spacing-lg); }
+.px-xl { padding-left: var(--spacing-xl); padding-right: var(--spacing-xl); }
+
+.py-sm { padding-top: var(--spacing-sm); padding-bottom: var(--spacing-sm); }
+.py-md { padding-top: var(--spacing-md); padding-bottom: var(--spacing-md); }
+.py-lg { padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg); }
+.py-xl { padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); }
+
+.m-xs { margin: var(--spacing-xs); }
+.m-sm { margin: var(--spacing-sm); }
+.m-md { margin: var(--spacing-md); }
+.m-lg { margin: var(--spacing-lg); }
+.m-xl { margin: var(--spacing-xl); }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+/* ========================================================================
+   12. FLEXBOX UTILITIES
+   ======================================================================== */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gap-xs { gap: var(--spacing-xs); }
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
+.gap-xl { gap: var(--spacing-xl); }
+
+/* ========================================================================
+   13. GRID UTILITIES (MOBILE FIRST)
+   ======================================================================== */
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.grid-cols-1 {
+    grid-template-columns: 1fr;
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Tablet */
+@media (min-width: 480px) {
+    .tablet\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tablet\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Tablet */
+@media (min-width: 768px) {
+    .lg\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ========================================================================
+   14. TOUCH-FRIENDLY COMPONENTS
+   ======================================================================== */
+/* Minimum tap target: 44x44px */
+.tap-target {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon Button */
+.icon-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-lg);
+    background: var(--light-100);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.icon-btn:active {
+    transform: scale(0.95);
+}
+
+.icon-btn.primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* ========================================================================
+   15. BADGES & LABELS
+   ======================================================================== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    background: var(--light-100);
+    color: var(--dark-600);
+}
+
+.badge.primary {
+    background: rgba(255, 94, 0, 0.1);
+    color: var(--primary-color);
+}
+
+.badge.success {
+    background: rgba(76, 175, 80, 0.1);
+    color: var(--success);
+}
+
+.badge.danger {
+    background: rgba(255, 71, 87, 0.1);
+    color: var(--danger);
+}
+
+.badge.warning {
+    background: rgba(255, 152, 0, 0.1);
+    color: var(--warning);
+}
+
+/* ========================================================================
+   16. ANIMATIONS & TRANSITIONS
+   ======================================================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in {
+    animation: fadeIn var(--transition-base);
+}
+
+.slide-in {
+    animation: slideIn var(--transition-base);
+}
+
+.scale-in {
+    animation: scaleIn var(--transition-base);
+}
+
+/* ========================================================================
+   17. STATE INDICATORS
+   ======================================================================== */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ========================================================================
+   18. ACCESSIBILITY
+   ======================================================================== */
+/* Focus visible for keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* ========================================================================
+   19. UTILITY CLASSES
+   ======================================================================== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--primary-color); }
+.text-success { color: var(--success); }
+.text-danger { color: var(--danger); }
+.text-warning { color: var(--warning); }
+.text-dark { color: var(--dark-800); }
+.text-muted { color: var(--dark-500); }
+
+.bg-primary { background: var(--primary-gradient); }
+.bg-light { background: var(--light-50); }
+.bg-white { background: var(--white); }
+
+.rounded { border-radius: var(--radius-lg); }
+.rounded-full { border-radius: var(--radius-full); }
+
+.shadow { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+
+.hidden { display: none; }
+.invisible { visibility: hidden; }
+
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+
+.whitespace-nowrap { white-space: nowrap; }
+
+/* ========================================================================
+   20. RESPONSIVE TYPOGRAPHY
+   ======================================================================== */
+@media (min-width: 480px) {
+    h1 { font-size: calc(var(--font-size-2xl) * 1.1); }
+    h2 { font-size: calc(var(--font-size-xl) * 1.1); }
+    
+    body { font-size: var(--font-size-md); }
+}
+
+@media (min-width: 768px) {
+    h1 { font-size: var(--font-size-3xl); }
+    h2 { font-size: calc(var(--font-size-xl) * 1.2); }
+    
+    body { font-size: var(--font-size-md); line-height: 1.8; }
+}
+
+/* ========================================================================
+   21. SCROLLBAR STYLING
+   ======================================================================== */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-light);
+}
+
+/* ========================================================================
+   22. PRINT STYLES
+   ======================================================================== */
+@media print {
+    body {
+        background: var(--white);
+    }
+    
+    .no-print {
+        display: none;
+    }
+}
+
+/* ========================================================================
+   23. HIGH CONTRAST MODE SUPPORT
+   ======================================================================== */
+@media (prefers-contrast: more) {
+    :root {
+        --dark-600: #000000;
+        --light-300: #666666;
+    }
+}
+
+/* ========================================================================
+   24. DARK MODE SUPPORT (Optional)
+   ======================================================================== */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--light-200);
+    }
+    
+    .card,
+    input,
+    textarea,
+    select {
+        background-color: var(--dark-800);
+        color: var(--light-100);
+        border-color: var(--dark-600);
+    }
+}

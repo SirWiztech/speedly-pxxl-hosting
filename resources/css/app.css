@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import './Splash.css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-syne: 'Syne', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+    --color-primary: #ff4500;
+    --color-primary-dark: #e63900;
+    --color-primary-light: rgba(255, 69, 0, 0.1);
+    --color-accent-purple: #2d1b4e;
+    --color-accent-purple-light: rgba(45, 27, 78, 0.1);
+    --color-bg-white: #ffffff;
+    --color-bg-light: #f8f9fa;
+    --color-text-dark: #1a1a1a;
+    --color-text-medium: #666666;
+    --color-text-light: #999999;
+    --color-border: #e5e5e5;
+    --color-background: #ffffff;
+    --color-foreground: #1a1a1a;
+    --color-card: #ffffff;
+    --color-card-foreground: #1a1a1a;
+    --color-popover: #ffffff;
+    --color-popover-foreground: #1a1a1a;
+    --color-primary-foreground: #ffffff;
+    --color-secondary: #f8f9fa;
+    --color-secondary-foreground: #1a1a1a;
+    --color-muted: #f8f9fa;
+    --color-muted-foreground: #666666;
+    --color-accent: #2d1b4e;
+    --color-accent-foreground: #ffffff;
+    --color-destructive: #ef4444;
+    --color-destructive-foreground: #ffffff;
+    --color-input: #e5e5e5;
+    --color-ring: #ff4500;
+    --color-sidebar: #ffffff;
+    --color-sidebar-foreground: #1a1a1a;
+    --color-sidebar-primary: #ff4500;
+    --color-sidebar-primary-foreground: #ffffff;
+    --color-sidebar-accent: #2d1b4e;
+    --color-sidebar-accent-foreground: #ffffff;
+    --color-sidebar-border: #e5e5e5;
+    --color-sidebar-ring: #ff4500;
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.625rem;
+    --radius-xl: 0.75rem;
+}
+
+:root {
+    --font-syne: 'Syne', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+    --color-primary: #ff4500;
+    --color-primary-dark: #e63900;
+    --color-primary-light: rgba(255, 69, 0, 0.1);
+    --color-accent-purple: #2d1b4e;
+    --color-accent-purple-light: rgba(45, 27, 78, 0.1);
+    --color-bg-white: #ffffff;
+    --color-bg-light: #f8f9fa;
+    --color-text-dark: #1a1a1a;
+    --color-text-medium: #666666;
+    --color-text-light: #999999;
+    --color-border: #e5e5e5;
+    
+    --background: #ffffff;
+    --foreground: #1a1a1a;
+    --card: #ffffff;
+    --card-foreground: #1a1a1a;
+    --popover: #ffffff;
+    --popover-foreground: #1a1a1a;
+    --primary: #ff4500;
+    --primary-foreground: #ffffff;
+    --secondary: #f8f9fa;
+    --secondary-foreground: #1a1a1a;
+    --muted: #f8f9fa;
+    --muted-foreground: #666666;
+    --accent: #2d1b4e;
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #e5e5e5;
+    --input: #e5e5e5;
+    --ring: #ff4500;
+    --radius: 0.625rem;
+    --sidebar: #ffffff;
+    --sidebar-foreground: #1a1a1a;
+    --sidebar-primary: #ff4500;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #2d1b4e;
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: #e5e5e5;
+    --sidebar-ring: #ff4500;
+}
+
+* {
+    font-family: var(--font-syne);
+}
+
+body {
+    font-family: var(--font-syne);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-family: var(--font-syne);
+    }
+}
+
+/* Global Premium Styles */
+.btn-premium {
+    background-color: #ff4500;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-syne);
+}
+
+.btn-premium:hover {
+    background-color: #e63900;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+}
+
+.btn-accent-premium {
+    background-color: #2d1b4e;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-syne);
+}
+
+.btn-accent-premium:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.card-premium {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e5e5;
+    transition: all 0.2s ease;
+}
+
+.card-premium:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-selected {
+    border-color: #2d1b4e;
+    background-color: rgba(45, 27, 78, 0.05);
+}
+
+.font-roboto-number {
+    font-family: var(--font-roboto);
+    font-variant-numeric: tabular-nums;
+}

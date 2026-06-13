@@ -1,0 +1,152 @@
+/* SplashMobileView.css - Premium Mobile Splash Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Syne', sans-serif;
+    background: white;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.splash-container {
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.brand-panel {
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-wrapper {
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+    margin: 0 auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.brand-title {
+    font-size: 48px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ff4500 0%, #ff6347 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.brand-tagline {
+    font-size: 16px;
+    color: #666666;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.splash-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.btn-splash {
+    display: block;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease;
+    font-family: 'Syne', sans-serif;
+}
+
+.btn-splash-primary {
+    background: #ff4500;
+    color: white;
+}
+
+.btn-splash-primary:hover {
+    background: #e63900;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 69, 0, 0.3);
+}
+
+.btn-splash-secondary {
+    background: white;
+    color: #1a1a1a;
+    border: 2px solid #e5e5e5;
+}
+
+.btn-splash-secondary:hover {
+    border-color: #ff4500;
+    color: #ff4500;
+}
+
+/* Loading Animation */
+.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+    .brand-title {
+        font-size: 36px;
+    }
+    
+    .logo-img {
+        width: 80px;
+    }
+    
+    .splash-actions {
+        padding: 0 20px;
+    }
+}

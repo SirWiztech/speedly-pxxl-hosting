@@ -1,0 +1,772 @@
+/* Driver Settings Mobile Styles */
+/* ALL SELECTORS HAVE "mobile-" PREFIX */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full width container - spans entire page width */
+.mobile-driver-settings-container {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Full width viewport - NO margins or padding on sides */
+.mobile-driver-settings-view {
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+    scroll-behavior: smooth;
+    position: relative;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Custom Scrollbar */
+.mobile-driver-settings-view::-webkit-scrollbar {
+    width: 4px;
+}
+
+.mobile-driver-settings-view::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.mobile-driver-settings-view::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 10px;
+}
+
+/* Header - Full width */
+.mobile-driver-settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    margin: 0;
+}
+
+.mobile-driver-settings-user-info h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.mobile-driver-settings-user-info p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mobile-driver-settings-notification-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Quick Stats - Full width with NO side margins */
+.mobile-quick-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 16px;
+    background: white;
+    width: 100%;
+    margin: 0;
+}
+
+.quick-stat-card {
+    background: #f8f9fa;
+    padding: 14px;
+    border-radius: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+.quick-stat-card .stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.quick-stat-card .stat-label {
+    font-size: 11px;
+    color: #888;
+}
+
+/* Profile Summary - REMOVED side margins for full width */
+.mobile-profile-summary {
+    background: white;
+    margin: 0 0 20px 0;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.profile-avatar {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff5e00, #ff8c3a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.profile-info p {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.profile-badges {
+    display: flex;
+    gap: 8px;
+}
+
+.profile-badges .badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.badge.verified {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.badge.pending {
+    background: #fff3e0;
+    color: #f97316;
+}
+
+.badge.online {
+    background: #e8f5e9;
+    color: #10b981;
+}
+
+.badge.offline {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.edit-profile-btn {
+    width: 36px;
+    height: 36px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ff5e00;
+    font-size: 16px;
+}
+
+.edit-profile-btn:active {
+    background: #ff5e00;
+    color: white;
+    transform: scale(0.95);
+}
+
+/* Settings Sections - Full width with NO side padding */
+.mobile-settings-sections {
+    padding: 0;
+    width: 100%;
+}
+
+.settings-section {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 0 16px;
+}
+
+.section-header i {
+    font-size: 16px;
+    color: #ff5e00;
+}
+
+.section-header h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Settings Item - Full width with NO side margins */
+.settings-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: white;
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #f5f5f5;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.settings-item:active {
+    background: #fff8f5;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.item-icon {
+    width: 44px;
+    height: 44px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #ff5e00;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.item-details p {
+    font-size: 11px;
+    color: #888;
+}
+
+.item-value {
+    font-size: 12px;
+    color: #666;
+    margin-right: 8px;
+}
+
+.item-action {
+    color: #ccc;
+    font-size: 12px;
+}
+
+/* Toggle Item - Full width */
+.settings-toggle-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: white;
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #f5f5f5;
+    width: 100%;
+}
+
+.toggle-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.toggle-info i {
+    width: 44px;
+    height: 44px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #ff5e00;
+}
+
+.toggle-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.toggle-info p {
+    font-size: 11px;
+    color: #888;
+}
+
+/* Bank Accounts List - Full width */
+.bank-accounts-list {
+    margin-top: 0;
+    padding-left: 0;
+    width: 100%;
+}
+
+.bank-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: #fafafa;
+    border-radius: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%;
+}
+
+.bank-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bank-info i {
+    font-size: 20px;
+    color: #ff5e00;
+}
+
+.bank-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+}
+
+.bank-number {
+    font-size: 11px;
+    color: #888;
+}
+
+.bank-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.bank-action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.bank-action-btn.default {
+    background: #e8f5e9;
+    color: #4caf50;
+}
+
+.bank-action-btn.remove {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.bank-action-btn:active {
+    transform: scale(0.95);
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    margin: 0;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 48px;
+    height: 26px;
+    background-color: #e0e0e0;
+    transition: all 0.3s ease;
+    border-radius: 13px;
+    pointer-events: none;
+}
+
+.toggle-slider:before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    top: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: linear-gradient(135deg, #ff5e00, #ff8c3a);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(22px);
+}
+
+/* Action Buttons - Full width */
+.mobile-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 0 16px 20px;
+    width: 100%;
+}
+
+.mobile-logout-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #ff5e00, #ff8c3a);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mobile-logout-btn:active {
+    transform: scale(0.98);
+}
+
+.mobile-delete-account-btn {
+    width: 100%;
+    padding: 16px;
+    background: white;
+    color: #ef4444;
+    border: 2px solid #ef4444;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mobile-delete-account-btn:active {
+    transform: scale(0.98);
+    background: #fef2f2;
+}
+
+/* Help Links */
+.mobile-help-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.help-link {
+    padding: 14px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.help-link:active {
+    background: #fff5f0;
+}
+
+/* Responsive Styles - Full width across ALL devices */
+/* Extra small devices (320px and below) */
+@media (max-width: 320px) {
+    .mobile-driver-settings-container,
+    .mobile-driver-settings-view {
+        width: 100%;
+        min-width: 100%;
+    }
+    
+    .mobile-profile-summary {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .profile-badges {
+        justify-content: center;
+    }
+    
+    .bank-accounts-list {
+        padding-left: 0;
+    }
+    
+    .quick-stat-card .stat-value {
+        font-size: 16px;
+    }
+}
+
+/* Small devices (321px to 375px) */
+@media (min-width: 321px) and (max-width: 375px) {
+    .mobile-driver-settings-container,
+    .mobile-driver-settings-view {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+/* Medium devices (376px to 425px) */
+@media (min-width: 376px) and (max-width: 425px) {
+    .mobile-driver-settings-container,
+    .mobile-driver-settings-view {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+/* Large devices (426px to 768px) */
+@media (min-width: 426px) and (max-width: 768px) {
+    .mobile-driver-settings-container,
+    .mobile-driver-settings-view {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Tablets (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mobile-driver-settings-container,
+    .mobile-driver-settings-view {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Desktop and larger (1025px and above) */
+@media (min-width: 1025px) {
+    .mobile-driver-settings-container,
+    .mobile-driver-settings-view {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Handle landscape orientation */
+@media (orientation: landscape) and (max-height: 500px) {
+    .mobile-driver-settings-view {
+        max-height: none;
+        min-height: auto;
+        padding-bottom: 60px;
+    }
+}
+
+/* Safe Area Support for notched devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .mobile-driver-settings-view {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom));
+    }
+}
+
+/* Ensure no horizontal scroll on any device */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fix for iOS Safari viewport */
+@supports (-webkit-touch-callout: none) {
+    .mobile-driver-settings-view {
+        height: -webkit-fill-available;
+    }
+}
+
+/* Remove any default margins from body that might cause white space */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* FORCE FULL WIDTH - NO WHITE SPACES */
+/* Add this at the END of your CSS file */
+
+/* Override everything - force full width */
+.mobile-driver-settings-container,
+.mobile-driver-settings-view,
+.mobile-settings-sections,
+.settings-section,
+.settings-item,
+.settings-toggle-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Remove all side margins and paddings from parent containers */
+.mobile-driver-settings-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow-x: hidden !important;
+}
+
+.mobile-driver-settings-view {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+/* Remove borders, shadows, and margins that create white space */
+.mobile-profile-summary,
+.settings-item,
+.settings-toggle-item,
+.bank-item,
+.quick-stat-card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Ensure content spans full width */
+.mobile-quick-stats,
+.mobile-profile-summary,
+.mobile-settings-sections {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    width: 100% !important;
+}
+
+/* Remove body margins that might cause white space */
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    background: white !important;
+}
+
+/* Fix for any parent containers that might have padding */
+#app, #root, main, .app-container, .main-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}

@@ -1,0 +1,485 @@
+/* Client Settings Desktop Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.settings-desktop-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background: #fafafa;
+    margin-right: 700px;
+}
+
+.settings-desktop-main {
+    flex: 1;
+    margin-left: 280px;
+    padding: 30px;
+    overflow-y: auto;
+    min-height: 100vh;
+    max-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+.settings-desktop-main::-webkit-scrollbar {
+    width: 8px;
+}
+
+.settings-desktop-main::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.settings-desktop-main::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 10px;
+}
+
+/* Header */
+.settings-desktop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.settings-desktop-title h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.settings-desktop-title p {
+    font-size: 14px;
+    color: #888;
+}
+
+.settings-notification-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: white;
+    border: 1px solid #f0f0f0;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.settings-notification-btn:hover {
+    background: #ff5e00;
+    color: white;
+    border-color: #ff5e00;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Settings Grid */
+.settings-desktop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Profile Section */
+.settings-profile-section {
+    grid-column: span 3;
+    background: linear-gradient(135deg, #ff5e00, #ff8c3a);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.settings-profile-avatar {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.settings-profile-avatar .edit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    color: #ff5e00;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    border: none;
+}
+
+.settings-profile-info {
+    flex: 1;
+}
+
+.settings-profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.settings-profile-email {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+.settings-profile-tier {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.settings-profile-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.settings-profile-btn {
+    background: white;
+    color: #ff5e00;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.settings-profile-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Settings Card */
+.settings-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+}
+
+.settings-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.settings-card-header i {
+    font-size: 20px;
+    color: #ff5e00;
+    background: #fff2e5;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.settings-card-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Settings List */
+.settings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.settings-item:hover {
+    background: #fafafa;
+}
+
+.settings-item-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.settings-item-label i {
+    color: #ff5e00;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.settings-item-label span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.settings-item-action {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-count,
+.item-value {
+    color: #666;
+    font-size: 13px;
+}
+
+.settings-item-btn {
+    background: none;
+    border: none;
+    color: #ff5e00;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Toggle Item */
+.settings-toggle-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toggle-label i {
+    color: #ff5e00;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.toggle-label span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    width: 52px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    margin: 0;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 52px;
+    height: 30px;
+    background-color: #e0e0e0;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.toggle-slider:before {
+    content: "";
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    top: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: linear-gradient(135deg, #ff5e00, #ff8c3a);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(22px);
+}
+
+/* Dark Mode Toggle */
+.settings-dark-mode-toggle {
+    grid-column: span 3;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+    margin-top: 10px;
+}
+
+.dark-mode-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.dark-mode-info p {
+    font-size: 13px;
+    color: #888;
+}
+
+/* Action Buttons */
+.settings-action-buttons {
+    grid-column: span 3;
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.settings-logout-btn {
+    flex: 1;
+    background: linear-gradient(135deg, #ff5e00, #ff8c3a);
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.settings-logout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 94, 0, 0.4);
+}
+
+.settings-delete-account-btn {
+    flex: 1;
+    background: #fff;
+    color: #ef4444;
+    border: 2px solid #ef4444;
+    padding: 16px 28px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.settings-delete-account-btn:hover {
+    background: #fef2f2;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .settings-desktop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .settings-profile-section,
+    .settings-dark-mode-toggle,
+    .settings-action-buttons {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .settings-desktop-main {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .settings-profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .settings-profile-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+
+#root, #app, .app {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,814 @@
+/* Driver Dashboard Mobile Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mobile-driver-dashboard-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+.mobile-driver-dashboard-view {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 90px;
+    scroll-behavior: smooth;
+    background-color: #f8f9fa;
+}
+
+/* Custom Scrollbar */
+.mobile-driver-dashboard-view::-webkit-scrollbar {
+    width: 4px;
+}
+
+.mobile-driver-dashboard-view::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.mobile-driver-dashboard-view::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 10px;
+}
+
+/* Header */
+.mobile-driver-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: white;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.mobile-driver-user-info h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.mobile-driver-status {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-text-mobile.online {
+    color: #10b981;
+}
+
+.status-text-mobile.offline {
+    color: #6b7280;
+}
+
+.mobile-driver-notification-btn {
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #666;
+}
+
+.mobile-driver-notification-btn:active {
+    background: #ff5e00;
+    color: white;
+    transform: scale(0.95);
+}
+
+.mobile-notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* API Alert */
+.mobile-api-alert {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 10px 16px;
+    margin: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+/* Balance Card */
+.mobile-driver-balance-card {
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    margin: 16px;
+    padding: 20px;
+    border-radius: 24px;
+    color: white;
+}
+
+.balance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.balance-header h2 {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.balance-header i {
+    font-size: 32px;
+    opacity: 0.8;
+}
+
+.balance-amount {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 8px 0 4px;
+}
+
+.total-earnings {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.today-earnings {
+    background: rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+}
+
+/* Status Toggle Button */
+.mobile-status-toggle-btn {
+    width: calc(100% - 32px);
+    margin: 0 16px 12px;
+    padding: 16px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    transition: all 0.3s;
+}
+
+.mobile-status-toggle-btn.online {
+    background: #ef4444;
+    color: white;
+}
+
+.mobile-status-toggle-btn.offline {
+    background: #10b981;
+    color: white;
+}
+
+.mobile-status-toggle-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.mobile-status-toggle-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.verification-warning {
+    color: #ef4444;
+    font-size: 12px;
+    text-align: center;
+    margin: -8px 16px 12px;
+}
+
+/* Withdraw Button */
+.mobile-withdraw-btn {
+    width: calc(100% - 32px);
+    margin: 0 16px 16px;
+    padding: 16px;
+    background: #1a1a2e;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.mobile-withdraw-btn:active {
+    transform: scale(0.98);
+}
+
+/* Active Ride Card */
+.mobile-active-ride-card,
+.mobile-pending-ride-card {
+    margin: 16px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid #10b981;
+    background: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-pending-ride-card {
+    border-color: #f97316;
+}
+
+.mobile-pending-ride-card.private {
+    border-color: #ff5e00;
+}
+
+.ride-header {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ride-header.active {
+    background: #10b981;
+    color: white;
+}
+
+.ride-header.public {
+    background: #f97316;
+    color: white;
+}
+
+.ride-header.private {
+    background: #ff5e00;
+    color: white;
+}
+
+.live-badge,
+.action-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+
+.ride-content {
+    padding: 16px;
+}
+
+.ride-content h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.ride-type-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.ride-type-badge.private {
+    background: #ff5e00;
+    color: white;
+}
+
+.ride-type-badge.public {
+    background: #4CAF50;
+    color: white;
+}
+
+.ride-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.ride-info p {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ride-info p i {
+    width: 16px;
+    color: #ff5e00;
+}
+
+.destination {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.ride-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ride-meta span {
+    background: #f5f5f5;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.ride-meta .fare {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.progress-bar {
+    height: 4px;
+    background: #e5e7eb;
+    margin: 0 16px 16px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #10b981;
+    border-radius: 2px;
+}
+
+.countdown-timer {
+    background: #fef3c7;
+    padding: 8px 16px;
+    margin: 0 16px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.timer-value {
+    color: #dc2626;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.ride-actions {
+    display: flex;
+    gap: 10px;
+    padding: 0 16px 16px;
+    flex-wrap: wrap;
+}
+
+.ride-actions button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    transition: all 0.3s;
+}
+
+.ride-actions button:active {
+    transform: scale(0.97);
+}
+
+.action-complete {
+    background: #10b981;
+    color: white;
+}
+
+.action-cancel {
+    background: #ef4444;
+    color: white;
+}
+
+.action-call,
+.action-navigate {
+    background: #3b82f6;
+    color: white;
+    flex: 0.5;
+}
+
+.action-accept {
+    background: #10b981;
+    color: white;
+}
+
+.action-decline {
+    background: #ef4444;
+    color: white;
+}
+
+/* No Ride Card */
+.mobile-no-ride-card {
+    text-align: center;
+    padding: 32px 24px;
+    margin: 16px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-no-ride-card i {
+    font-size: 48px;
+    color: #d1d5db;
+    margin-bottom: 12px;
+}
+
+.mobile-no-ride-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.mobile-no-ride-card p {
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.go-online-btn {
+    background: #ff5e00;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.kyc-btn {
+    background: #9ca3af;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: not-allowed;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Completed Card */
+.mobile-completed-card {
+    background: white;
+    margin: 16px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.completed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.completed-header h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+}
+
+.today-badge {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.completed-count {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.rating-value {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.rating-count {
+    color: #888;
+    font-size: 11px;
+}
+
+.stats-btn {
+    width: 100%;
+    background: #ff5e00;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.stats-btn:active {
+    transform: scale(0.98);
+}
+
+/* Quick Actions */
+.mobile-quick-actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 0 16px;
+    margin: 16px 0;
+}
+
+.mobile-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 8px;
+    background: white;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-action-btn:active {
+    background: #fff5f0;
+    transform: scale(0.96);
+}
+
+.mobile-action-btn .action-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #ff5e00;
+}
+
+.mobile-action-btn span {
+    font-size: 10px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Recent Rides */
+.mobile-recent-section {
+    padding: 0 16px;
+    margin: 16px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.see-all-btn {
+    background: none;
+    border: none;
+    color: #ff5e00;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.recent-rides-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recent-ride-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: white;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.recent-ride-item:active {
+    background: #fafafa;
+    transform: scale(0.98);
+}
+
+.ride-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.ride-icon.success {
+    background: #e8f5e9;
+    color: #4caf50;
+}
+
+.ride-details {
+    flex: 1;
+}
+
+.ride-details h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.ride-details p {
+    font-size: 11px;
+    color: #888;
+}
+
+.ride-details .commission {
+    font-size: 10px;
+    color: #999;
+}
+
+.ride-amount {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.ride-amount.positive {
+    color: #4caf50;
+}
+
+.no-recent {
+    text-align: center;
+    padding: 32px;
+    background: white;
+    border-radius: 16px;
+    color: #9ca3af;
+}
+
+.no-recent i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 380px) {
+    .mobile-quick-actions {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .balance-amount {
+        font-size: 28px;
+    }
+    
+    .ride-actions {
+        flex-direction: column;
+    }
+    
+    .ride-actions button {
+        width: 100%;
+    }
+    
+    .action-call,
+    .action-navigate {
+        flex: 1;
+    }
+}
+
+/* Safe Area Support */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .mobile-driver-dashboard-view {
+        padding-bottom: calc(90px + env(safe-area-inset-bottom));
+    }
+}
+
+/* Vertical Scroll - Driver Dashboard Mobile */
+.mobile-driver-dashboard-view {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 100px;
+    background-color: #f8f9fa;
+}
+
+/* Ensure the container has a fixed height */
+.mobile-driver-dashboard-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+/* Custom Scrollbar Styling */
+.mobile-driver-dashboard-view::-webkit-scrollbar {
+    width: 4px;
+}
+
+.mobile-driver-dashboard-view::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.mobile-driver-dashboard-view::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 4px;
+}
+
+/* Firefox Scrollbar Support */
+.mobile-driver-dashboard-view {
+    scrollbar-width: thin;
+    scrollbar-color: #ff5e00 #f1f1f1;
+}

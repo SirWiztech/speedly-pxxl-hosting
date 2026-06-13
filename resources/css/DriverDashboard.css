@@ -1,0 +1,958 @@
+/* Driver Dashboard Desktop Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.driver-desktop-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background: #fafafa;
+    margin-right: 620px;
+}
+
+.driver-desktop-main {
+    flex: 1;
+    margin-left: 280px;
+    padding: 30px;
+    overflow-y: auto;
+    min-height: 100vh;
+    max-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+.driver-desktop-main::-webkit-scrollbar {
+    width: 8px;
+}
+
+.driver-desktop-main::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.driver-desktop-main::-webkit-scrollbar-thumb {
+    background: #ff5e00;
+    border-radius: 10px;
+}
+
+/* Header */
+.driver-desktop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.driver-desktop-title h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.driver-status-line {
+    font-size: 14px;
+    color: #888;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.online {
+    background: #10b981;
+    animation: pulse 2s infinite;
+}
+
+.status-dot.offline {
+    background: #9ca3af;
+}
+
+.status-text.online {
+    color: #10b981;
+}
+
+.status-text.offline {
+    color: #6b7280;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.driver-desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.driver-notification-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: white;
+    border: 1px solid #f0f0f0;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.driver-notification-btn:hover {
+    background: #ff5e00;
+    color: white;
+    border-color: #ff5e00;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.online-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #10b981;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.pulse {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pulse::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Stats Grid */
+.driver-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.driver-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f5f5f5;
+}
+
+/* Earnings Card */
+.earnings-card {
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    color: white;
+}
+
+.earnings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.earnings-header h2 {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.earnings-header i {
+    font-size: 32px;
+    opacity: 0.8;
+}
+
+.balance-amount {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 8px 0 4px;
+}
+
+.total-earnings {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.today-earnings {
+    background: rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.withdraw-btn-desktop {
+    width: 100%;
+    background: white;
+    color: #ff5e00;
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.withdraw-btn-desktop:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Status Card */
+.status-card {
+    text-align: center;
+}
+
+.status-card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.status-display {
+    margin-bottom: 20px;
+}
+
+.status-icon {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+.status-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-badge.online {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-badge.offline {
+    background: #f8f9fa;
+    color: #6c757d;
+}
+
+.status-toggle-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+    border: none;
+}
+
+.status-toggle-btn.online {
+    background: #ef4444;
+    color: white;
+}
+
+.status-toggle-btn.offline {
+    background: #10b981;
+    color: white;
+}
+
+.status-toggle-btn:hover:not(:disabled) {
+    transform: scale(1.02);
+}
+
+.status-toggle-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.verification-warning {
+    color: #ef4444;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+/* Completed Card */
+.completed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.completed-header h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+}
+
+.today-badge {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.completed-count {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.rating-value {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.rating-count {
+    color: #888;
+    font-size: 13px;
+}
+
+.stats-btn {
+    width: 100%;
+    background: #f5f5f5;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.stats-btn:hover {
+    background: #e0e0e0;
+}
+
+/* Pending Rides Section */
+.pending-rides-section {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.pending-rides-section .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+}
+.pending-rides-section .section-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Active/Pending Ride Cards */
+.active-ride-card,
+.pending-ride-card {
+    grid-column: span 2;
+}
+
+.ride-header {
+    padding: 12px 16px;
+    border-radius: 12px 12px 0 0;
+    margin: -24px -24px 20px -24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ride-header.active {
+    background: #10b981;
+    color: white;
+}
+
+.ride-header.public {
+    background: #f97316;
+    color: white;
+}
+
+.ride-header.private {
+    background: #ff5e00;
+    color: white;
+}
+
+.live-badge,
+.action-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.ride-content {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.ride-icon {
+    width: 60px;
+    height: 60px;
+    background: #fff5f0;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ff5e00;
+}
+
+.ride-details {
+    flex: 1;
+}
+
+.ride-details h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ride-type-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.ride-type-badge.private {
+    background: #ff5e00;
+    color: white;
+}
+
+.ride-type-badge.public {
+    background: #4CAF50;
+    color: white;
+}
+
+.ride-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.ride-info-grid .label {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.ride-info-grid .value {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.destination {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.ride-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ride-meta span {
+    background: #f5f5f5;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.ride-meta .fare {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #10b981;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.ride-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.ride-actions button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+    border: none;
+}
+
+.action-complete {
+    background: #10b981;
+    color: white;
+}
+
+.action-cancel {
+    background: #ef4444;
+    color: white;
+}
+
+.action-call,
+.action-navigate {
+    background: #3b82f6;
+    color: white;
+    min-width: 60px;
+}
+
+.action-accept {
+    background: #10b981;
+    color: white;
+}
+
+.action-decline {
+    background: #ef4444;
+    color: white;
+}
+
+.ride-actions button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+/* No Ride Card */
+.no-ride-card {
+    grid-column: span 2;
+    text-align: center;
+    padding: 48px;
+}
+
+.no-ride-content i {
+    font-size: 64px;
+    color: #d1d5db;
+    margin-bottom: 16px;
+}
+
+.no-ride-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.no-ride-content p {
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.go-online-btn {
+    background: #ff5e00;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.kyc-btn {
+    background: #9ca3af;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Quick Actions Card */
+.quick-actions-card {
+    grid-column: span 2;
+}
+
+.quick-actions-card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.quick-action-btn {
+    background: #f9fafb;
+    border: 1px solid #f0f0f0;
+    padding: 16px 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.quick-action-btn:hover:not(:disabled) {
+    background: #fff5f0;
+    border-color: #ff5e00;
+    transform: translateY(-3px);
+}
+
+.quick-action-btn i {
+    font-size: 24px;
+    color: #ff5e00;
+}
+
+.quick-action-btn span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+}
+
+.quick-action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Recent Trips Card */
+.recent-trips-card {
+    grid-column: span 2;
+}
+
+.recent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.recent-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.see-all-btn {
+    background: none;
+    border: none;
+    color: #ff5e00;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.recent-trips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.recent-trip-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: #fafafa;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.recent-trip-item:hover {
+    background: #f5f5f5;
+}
+
+.trip-icon {
+    width: 48px;
+    height: 48px;
+    background: #e8f5e9;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4caf50;
+    font-size: 20px;
+}
+
+.trip-details {
+    flex: 1;
+}
+
+.trip-details h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.trip-details p {
+    font-size: 12px;
+    color: #888;
+}
+
+.trip-details .commission {
+    font-size: 11px;
+    color: #999;
+}
+
+.trip-amount {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.trip-amount.positive {
+    color: #4caf50;
+}
+
+.no-recent {
+    text-align: center;
+    padding: 40px;
+    color: #9ca3af;
+}
+
+.no-recent i {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+/* Bottom Banner */
+.driver-bottom-banner {
+    background: linear-gradient(135deg, #ff5e00 0%, #ff8c3a 100%);
+    border-radius: 20px;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-top: 24px;
+}
+
+.banner-info h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.banner-info p {
+    opacity: 0.9;
+    margin-bottom: 12px;
+}
+
+.banner-stats {
+    display: flex;
+    gap: 24px;
+}
+
+.banner-stats .stat-value {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.banner-stats .stat-label {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-left: 4px;
+}
+
+.banner-action-btn {
+    background: white;
+    color: #ff5e00;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.banner-action-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.banner-action-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .driver-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .active-ride-card,
+    .pending-ride-card,
+    .quick-actions-card,
+    .recent-trips-card,
+    .no-ride-card {
+        grid-column: span 2;
+    }
+    
+    .quick-actions-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .driver-desktop-main {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .driver-bottom-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+    
+    .ride-content {
+        flex-direction: column;
+    }
+}
+
+#root, #app, .app {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#root, #app, .app {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
